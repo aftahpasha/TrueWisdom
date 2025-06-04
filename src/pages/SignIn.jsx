@@ -14,7 +14,7 @@ const SignIn = () => {
                         className="object-cover pointer-events-none h-full w-full max-w-[3.75rem] max-h-[3.75rem] mb-4"
                     />
                     <h2 className='font-semibold text-[2rem] leading-[2.5rem] mb-2 text-center'>Selamat Datang Kembali!</h2>
-                    <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <a href='/' className='text-brand-purple font-medium'>Daftar</a></p>
+                    <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <a href='/register' className='text-brand-purple font-medium'>Daftar</a></p>
                     <form className='w-full'>
                         <div className='mb-4'>
                             <label htmlFor="email" className="block text-sm font-medium text-brand-purple-dark mb-1.5">
@@ -40,7 +40,7 @@ const SignIn = () => {
                                 required
                             />
                         </div>
-                        <a href='/' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</a>
+                        <a href='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</a>
                         <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal">
                             <span className='font-normal'>Masuk</span>
                         </Button>
@@ -49,7 +49,7 @@ const SignIn = () => {
                             <p className='text-brand-gray'>Atau</p>
                             <hr className='flex-grow' />
                         </div>
-                        <Button type="submit" variant="outline" size="md" className="w-full rounded-xl border-black flex justify-center items-center gap-2">
+                        <Button type="button" variant="outline" size="md" className="w-full rounded-xl border-black flex justify-center items-center gap-2">
                             <img
                                 src={LogoGoogleImage}
                                 alt="Logo Google"
