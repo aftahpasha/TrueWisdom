@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from './ui/Button';
 import sparkIcon from '../../assets/images/vector.svg'; // Assuming this is the spark icon
+import ModalQuoteSent from './modal/ModalQuoteSent';
 
 const categories = [
   { id: 'truelove', name: 'TrueLove' },
@@ -27,7 +28,8 @@ const HeroForm = () => {
       email,
     });
     // Add form submission logic (e.g., API call)
-    alert('Form submitted! Check console for data.');
+    modal_quote_sent.showModal();
+    // alert('Form submitted! Check console for data.');
   };
 
   return (
@@ -94,6 +96,8 @@ const HeroForm = () => {
         <img src={sparkIcon} alt="" className="h-4 w-4" />
         Sisa 4 Quotes Gratis
       </Button>
+
+      <ModalQuoteSent />
     </form>
   );
 };
