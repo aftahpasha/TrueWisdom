@@ -4,6 +4,11 @@ import LogoGoogleImage from '../../assets/images/logo_google.png';
 import Button from '../components/ui/Button';
 
 const SignIn = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        window.location.href = '/checkout';
+    }
+
     return (
         <div className="flex flex-col-reverse md:flex-row justify-stretch items-stretch min-h-screen md:max-h-screen font-ibm-plex-sans">
             <div className='md:w-1/2 flex flex-col justify-center items-center'>
@@ -15,7 +20,7 @@ const SignIn = () => {
                     />
                     <h2 className='font-semibold text-[2rem] leading-[2.5rem] mb-2 text-center'>Selamat Datang Kembali!</h2>
                     <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <a href='/register' className='text-brand-purple font-medium'>Daftar</a></p>
-                    <form className='w-full'>
+                    <form onSubmit={handleSubmit} className='w-full'>
                         <div className='mb-4'>
                             <label htmlFor="email" className="block text-sm font-medium text-brand-purple-dark mb-1.5">
                                 Email

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import AvatarImage from '../../assets/images/avatar.jpg';
+import ArrowDownPrimarySVG from '../../assets/images/arrow_down_primary.svg';
+import DashboardPrimarySVG from '../../assets/images/dashboard_primary.svg';
+import LogoutErrorSVG from '../../assets/images/logout_error.svg';
 import Button from './ui/Button';
 
 // Import assets
@@ -20,7 +24,7 @@ const NavLink = ({ href, children }) => (
   </a>
 );
 
-const Navbar = () => {
+const Navbar = ({ authenticated = false }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -81,15 +85,40 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Auth Buttons - Desktop */}
-        <div className="hidden lg:flex items-center space-x-3">
-          <Button variant="outline" size="sm" onClick={() => handleAuthAction('Masuk')}>
-            Masuk
-          </Button>
-          <Button variant="primary" size="sm" onClick={() => handleAuthAction('Daftar')}>
-            Daftar
-          </Button>
-        </div>
+        {authenticated ?
+          /* Profile Buttons - Desktop */
+          <div class="hidden lg:block dropdown dropdown-hover">
+            <Button type="button" variant="outline" size="sm" className="w-full rounded-full bg-white flex justify-center items-center">
+              <img src={AvatarImage} alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
+              <span className='font-medium text-lg mr-4'>Stephen</span>
+              <img src={ArrowDownPrimarySVG} alt="Arrow Down" className="object-contain" />
+            </Button>
+            <ul tabindex="0" class="dropdown-content menu rounded-lg shadow bg-white">
+              <li>
+                <a className='text-brand-purple flex items-center gap-2'>
+                  <img src={DashboardPrimarySVG} alt="Arrow Down" className="object-contain" />
+                  <p className='font-medium text-lg'>Dashboard</p>
+                </a>
+              </li>
+              <li>
+                <a className='text-error flex items-center gap-2'>
+                  <img src={LogoutErrorSVG} alt="Arrow Down" className="object-contain" />
+                  <p className='font-medium text-lg'>Keluar</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          :
+          /* Auth Buttons - Desktop */
+          <div className="hidden lg:flex items-center space-x-3">
+            <Button variant="outline" size="sm" onClick={() => handleAuthAction('Masuk')}>
+              Masuk
+            </Button>
+            <Button variant="primary" size="sm" onClick={() => handleAuthAction('Daftar')}>
+              Daftar
+            </Button>
+          </div>
+        }
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
@@ -104,26 +133,56 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className={`lg:hidden ${isScrolled ? 'fixed' : 'absolute'} top-[76px] left-0 right-0 bg-white shadow-lg py-4 animate-slide-in-left ${!isMobileMenuOpen && 'animate-slide-out-left'}`}>
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="flex flex-col space-y-4">
-              {navLinks.map(link => (
-                <NavLink key={link.text} href={link.href}>{link.text}</NavLink>
-              ))}
-              <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
-                <Button variant="outline" size="md" className="w-full" onClick={() => handleAuthAction('Masuk')}>
-                  Masuk
-                </Button>
-                <Button variant="primary" size="md" className="w-full" onClick={() => handleAuthAction('Daftar')}>
-                  Daftar
-                </Button>
+      {
+        isMobileMenuOpen && (
+          <div className={`lg:hidden ${isScrolled ? 'fixed' : 'absolute'} top-[76px] left-0 right-0 bg-white shadow-lg py-4 animate-slide-in-left ${!isMobileMenuOpen && 'animate-slide-out-left'}`}>
+            <div className="container mx-auto px-4 sm:px-6">
+              <div className="flex flex-col space-y-4">
+                {navLinks.map(link => (
+                  <NavLink key={link.text} href={link.href}>{link.text}</NavLink>
+                ))}
+                {authenticated ?
+                  /* Profile Buttons - Mobile */
+                  <div>
+                    <div class="dropdown dropdown-hover">
+                      <Button type="button" variant="outline" size="sm" className="w-full rounded-full bg-white flex justify-center items-center">
+                        <img src={AvatarImage} alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
+                        <span className='font-medium text-lg mr-4'>Stephen</span>
+                        <img src={ArrowDownPrimarySVG} alt="Arrow Down" className="object-contain" />
+                      </Button>
+                      <ul tabindex="0" class="dropdown-content menu rounded-lg shadow bg-white">
+                        <li>
+                          <a className='text-brand-purple flex items-center gap-2'>
+                            <img src={DashboardPrimarySVG} alt="Arrow Down" className="object-contain" />
+                            <p className='font-medium text-lg'>Dashboard</p>
+                          </a>
+                        </li>
+                        <li>
+                          <a className='text-error flex items-center gap-2'>
+                            <img src={LogoutErrorSVG} alt="Arrow Down" className="object-contain" />
+                            <p className='font-medium text-lg'>Keluar</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  :
+                  /* Auth Buttons - Mobile */
+                  <div className="flex flex-col space-y-3 pt-4 border-t border-gray-200">
+                    <Button variant="outline" size="md" className="w-full" onClick={() => handleAuthAction('Masuk')}>
+                      Masuk
+                    </Button>
+                    <Button variant="primary" size="md" className="w-full" onClick={() => handleAuthAction('Daftar')}>
+                      Daftar
+                    </Button>
+                  </div>
+                }
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </nav>
+        )
+      }
+    </nav >
   );
 };
 
