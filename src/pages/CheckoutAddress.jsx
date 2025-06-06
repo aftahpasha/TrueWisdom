@@ -128,7 +128,7 @@ const CheckoutAddress = () => {
                                         />
                                         {selectedPromo != null &&
                                             <div className="absolute top-1/2 right-6 -translate-y-1/2 translate-x-1/2">
-                                                <button type="button" className="btn btn-link">
+                                                <button type="button\" className="btn btn-link">
                                                     <img src={XCircleBlackSVG} alt="X Icon" className="object-contain" onClick={removeSelectedPromo} />
                                                 </button>
                                             </div>
