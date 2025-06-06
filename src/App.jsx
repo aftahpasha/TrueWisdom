@@ -5,6 +5,7 @@ import SignIn from "./pages/SignIn.jsx";
 import Register from "./pages/Register.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import Checkout from "./pages/Checkout.jsx";
+import CheckoutAddress from "./pages/CheckoutAddress.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout-address" element={<CheckoutAddress />} />
       </Routes>
     </Router>
   );
