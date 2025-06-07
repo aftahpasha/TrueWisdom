@@ -6,6 +6,7 @@ import Register from "./pages/Register.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import CheckoutAddress from "./pages/CheckoutAddress.jsx";
+import Dashboard from "./pages/Dashboard/Index.jsx";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/checkout-address" element={<CheckoutAddress />} />
       </Routes>
     </Router>

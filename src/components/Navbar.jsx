@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import AvatarImage from '../../assets/images/avatar.jpg';
-import ArrowDownPrimarySVG from '../../assets/images/arrow_down_primary.svg';
 import DashboardPrimarySVG from '../../assets/images/dashboard_primary.svg';
 import LogoutErrorSVG from '../../assets/images/logout_error.svg';
 import Button from './ui/Button';

@@ -10,6 +10,7 @@ export default {
       },
       colors: {
         "brand-purple": {
+          500: "#8A57C0",
           light: "#E5D3FD", // Adjusted, original was a gradient
           DEFAULT: "#653894", // Main purple for buttons, accents
           dark: "#321C4A", // Darker purple for text, backgrounds
@@ -23,6 +24,11 @@ export default {
           light: "#F0F2F5", // for backgrounds like input fields
           DEFAULT: "#71717B", // for text
           dark: "#535861",
+        },
+        "brand-honey-yellow": {
+          light: "#FCDDB6",
+          DEFAULT: "#F8B35B",
+          dark: "#623904",
         },
       },
       keyframes: {
