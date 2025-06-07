@@ -4,7 +4,11 @@ import CheckPrimarySVG from '../../assets/images/check_primary.svg';
 import CheckSuccessSVG from '../../assets/images/check_success.svg';
 import XCircleBlackSVG from '../../assets/images/x_circle_black.svg';
 import ArrowRightWhiteSVG from '../../assets/images/arrow_right_white.svg';
+import ChevronRightGraySVG from '../../assets/images/chevron_right_gray.svg';
+import LocationPrimarySVG from '../../assets/images/location_primary.svg';
 import Button from "../components/ui/Button";
+import ModalMyAddress from "../components/modal/ModalMyAddress";
+import ModalNewAddress from "../components/modal/ModalNewAddress";
 
 const Checkout = () => {
     const [codePromo, setCodePromo] = useState('');
@@ -31,6 +35,27 @@ const Checkout = () => {
                     <h3 className="font-semibold text-[2rem] mb-5">Checkout Paket</h3>
                     <div className="flex flex-col lg:flex-row gap-6">
                         <div className="lg:w-[65%]">
+                            <div className="bg-white rounded-xl border border-brand-gray-light p-3 mb-6">
+                                <div className="flex justify-between items-center">
+                                    <h4 className="font-semibold text-xl leading-6">Alamat Pengiriman</h4>
+                                    <button className="btn btn-ghost btn-sm" onClick={() => modal_my_address.showModal()}>
+                                        <img src={ChevronRightGraySVG} alt="Arrow Icon" className="object-contain" />
+                                    </button>
+                                    <ModalMyAddress />
+                                    <ModalNewAddress />
+                                </div>
+                                <hr className="my-3" />
+                                <div className="flex gap-4 items-start">
+                                    <img src={LocationPrimarySVG} alt="Arrow Icon" className="object-contain pt-2" />
+                                    <div className="flex flex-col gap-2">
+                                        <p className="font-semibold text-lg">Caroline,</p>
+                                        <p className="text-brand-purple text-lg">6289746172218,</p>
+                                        <p className="text-brand-purple text-lg">
+                                            Jalan Sudirman Nomor 45, Kelurahan Kebon Kacang, Kecamatan Tanah Abang, Jakarta Pusat, DKI Jakarta, Indonesia.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="bg-white rounded-xl border border-brand-gray-light p-3">
                                 <h4 className="font-semibold text-xl leading-6">Detail Paket</h4>
                                 <hr className="my-3" />

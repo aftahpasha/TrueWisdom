@@ -87,13 +87,13 @@ const Navbar = ({ authenticated = false }) => {
 
         {authenticated ?
           /* Profile Buttons - Desktop */
-          <div class="hidden lg:block dropdown dropdown-hover">
+          <div className="hidden lg:block dropdown dropdown-hover">
             <Button type="button" variant="outline" size="sm" className="w-full rounded-full bg-white flex justify-center items-center">
               <img src={AvatarImage} alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
               <span className='font-medium text-lg mr-4'>Stephen</span>
               <img src={ArrowDownPrimarySVG} alt="Arrow Down" className="object-contain" />
             </Button>
-            <ul tabindex="0" class="dropdown-content menu rounded-lg shadow bg-white">
+            <ul tabIndex="0" className="dropdown-content menu rounded-lg shadow bg-white">
               <li>
                 <a className='text-brand-purple flex items-center gap-2'>
                   <img src={DashboardPrimarySVG} alt="Arrow Down" className="object-contain" />
@@ -144,13 +144,13 @@ const Navbar = ({ authenticated = false }) => {
                 {authenticated ?
                   /* Profile Buttons - Mobile */
                   <div>
-                    <div class="dropdown dropdown-hover">
+                    <div className="dropdown dropdown-hover">
                       <Button type="button" variant="outline" size="sm" className="w-full rounded-full bg-white flex justify-center items-center">
                         <img src={AvatarImage} alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
                         <span className='font-medium text-lg mr-4'>Stephen</span>
                         <img src={ArrowDownPrimarySVG} alt="Arrow Down" className="object-contain" />
                       </Button>
-                      <ul tabindex="0" class="dropdown-content menu rounded-lg shadow bg-white">
+                      <ul tabIndex="0" className="dropdown-content menu rounded-lg shadow bg-white">
                         <li>
                           <a className='text-brand-purple flex items-center gap-2'>
                             <img src={DashboardPrimarySVG} alt="Arrow Down" className="object-contain" />
