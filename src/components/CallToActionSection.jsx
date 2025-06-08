@@ -15,8 +15,7 @@ const CallToActionSection = () => {
   };
 
   const handleSendGift = () => {
-    console.log("Kirim Sebagai Hadiah clicked");
-    alert("Redirecting to gift options!");
+    window.location.href = "https://truewisdom.id/checkout";
   };
 
   return (

@@ -16,8 +16,7 @@ const NavLink = ({ href, children }) => (
     className="text-brand-purple-dark hover:text-brand-purple font-medium transition-colors duration-300"
     onClick={(e) => {
       e.preventDefault();
-      console.log(`Navigating to ${children}`);
-      // Add actual navigation logic here
+      window.location.href = href;
     }}
   >
     {children}
@@ -60,7 +59,7 @@ const Navbar = ({ authenticated = false }) => {
   };
 
   const navLinks = [
-    { href: '#beranda', text: 'Beranda' },
+    { href: '/', text: 'Beranda' },
     { href: '#fitur', text: 'Fitur' },
     { href: '#harga', text: 'Harga' },
     { href: '#tentang-kami', text: 'Tentang Kami' },
