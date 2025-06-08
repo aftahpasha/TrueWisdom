@@ -6,7 +6,7 @@ import Button from '../components/ui/Button';
 const SignIn = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.location.href = '/checkout';
+        window.location.href = '/dashboard';
     }
 
     return (
