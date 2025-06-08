@@ -24,7 +24,8 @@ const DetailedPricingCard = ({ plan }) => {
 
   const handleBuyPackage = () => {
     console.log("Buy Package clicked for:", plan.title, "Duration:", selectedDuration.label, "Gift:", sendAsGift);
-    alert(`Buying ${plan.title} for ${selectedDuration.label}. Gift: ${sendAsGift}`);
+    // alert(`Buying ${plan.title} for ${selectedDuration.label}. Gift: ${sendAsGift}`);
+    window.location.href = '/checkout';
   };
 
   return (
@@ -88,9 +89,9 @@ const DetailedPricingCard = ({ plan }) => {
       {/* Price and CTA */}
       <div className="mt-auto flex flex-col gap-3.5">
         <label className="flex items-center gap-2 cursor-pointer text-brand-purple-dark font-medium font-ibm-plex-sans tracking-[0.2px]">
-          <input 
-            type="checkbox" 
-            checked={sendAsGift} 
+          <input
+            type="checkbox"
+            checked={sendAsGift}
             onChange={handleGiftToggle}
             className="hidden"
           />
@@ -99,7 +100,7 @@ const DetailedPricingCard = ({ plan }) => {
           </div>
           Kirim sebagai Hadiah
         </label>
-        
+
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3.5">
           <div className="flex-1">
             <span className="text-3xl sm:text-4xl font-semibold text-brand-purple-dark font-ibm-plex-sans tracking-[0.3px]">

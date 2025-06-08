@@ -25,7 +25,7 @@ const ModalNewAddress = () => {
                             type="text"
                             id="full_name"
                             placeholder="Masukkan nama lengkap Anda"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>
@@ -37,7 +37,7 @@ const ModalNewAddress = () => {
                             type="text"
                             id="no_telephone"
                             placeholder="Masukkan nomor telepon Anda"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>
@@ -49,7 +49,7 @@ const ModalNewAddress = () => {
                             type="text"
                             id="no_telephone"
                             placeholder="Masukkan detail alamat Anda"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>

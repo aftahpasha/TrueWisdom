@@ -1,11 +1,11 @@
 import React from "react";
-import DashboardLayout from "../../layouts/dashboard";
 import SharePrimarySVG from '../../../assets/images/share_primary.svg';
 import DownloadHoneyYellowSVG from '../../../assets/images/download_honey_yellow.svg';
 import SendHoneyYellowSVG from '../../../assets/images/send_honey_yellow.svg';
 import SearchBlackSVG from '../../../assets/images/search_black.svg';
 import GridBlackSVG from '../../../assets/images/grid_black.svg';
 import MenuBlackSVG from '../../../assets/images/menu_black.svg';
+import DashboardLayout from "../../layouts/dashboard";
 
 const Dashboard = () => {
     return (

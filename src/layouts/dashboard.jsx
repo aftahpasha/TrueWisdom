@@ -15,7 +15,9 @@ import LogoutV2ErrorSVG from '../../assets/images/logout_v2_error.svg';
 import AvatarImage from '../../assets/images/avatar.jpg';
 import Button from "../components/ui/Button";
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = ({ children, header = true, title = 'Dashboard' }) => {
+
+
     return (
         <div className="flex flex-col md:flex-row md:min-h-screen bg-brand-gray-light">
             <div className="flex-shrink-0 md:w-[15rem] md:min-h-screen p-4">
@@ -87,7 +89,7 @@ const DashboardLayout = ({ children }) => {
                         <p className="font-medium text-xs text-brand-gray">Main menu</p>
                         <div className="flex-grow flex flex-col justify-between gap-2">
                             <div className="flex flex-col gap-6">
-                                <Button type="button" variant="ghost" size="sm" className="w-full rounded-lg bg-white flex justify-stretch items-center py-3">
+                                <Button type="button" variant="ghost" size="sm" className="w-full rounded-lg bg-white flex justify-stretch items-center py-3" onClick={() => window.location.href = '/dashboard'}>
                                     <div className="flex-grow flex items-center gap-2.5">
                                         <img src={DashboardPrimarySVG} alt="Dashboard" className="h-4 w-4" />
                                         <p className='font-medium text-sm text-secondary-content'>Dashboard</p>
@@ -96,14 +98,14 @@ const DashboardLayout = ({ children }) => {
                             </div>
                             <div className="flex flex-col gap-6">
                                 <div className="flex flex-col gap-2">
-                                    <button className="btn btn-ghost flex gap-3 justify-start items-center p-2.5">
+                                    <a href="/dashboard/buy-new-package" className="btn btn-ghost flex gap-3 justify-start items-center p-2.5">
                                         <img src={ShoppingBagGraySVG} alt="Dashboard" className="h-4 w-4" />
                                         <p className="font-medium text-brand-gray text-sm">Beli Paket Baru</p>
-                                    </button>
-                                    <button className="btn btn-ghost flex gap-3 justify-start items-center p-2.5">
+                                    </a>
+                                    <a href="/dashboard/setting" className="btn btn-ghost flex gap-3 justify-start items-center p-2.5">
                                         <img src={SettingGraySVG} alt="Dashboard" className="h-4 w-4" />
                                         <p className="font-medium text-brand-gray text-sm">Pengaturan</p>
-                                    </button>
+                                    </a>
                                 </div>
                                 <button className="btn btn-ghost flex gap-3 justify-start items-center p-2.5">
                                     <img src={LogoutV2ErrorSVG} alt="Dashboard" className="h-4 w-4" />
@@ -123,14 +125,18 @@ const DashboardLayout = ({ children }) => {
                 </div>
             </div>
             <div className="flex-grow h-full md:max-h-screen md:overflow-y-auto py-3 pr-3 pl-3 md:pl-0 z-40">
-                <div className="bg-white rounded-lg">
-                    <div className="flex justify-between items-center px-6 py-4">
-                        <h1 className="font-semibold text-lg">Dashboard</h1>
-                        <button className="btn btn-ghost btn-sm">
-                            <img src={BellBlackSVG} alt="Icon Bell" className="object-contain" />
-                        </button>
-                    </div>
-                    <hr className="bg-gray-300" />
+                <div className="bg-white rounded-lg md:min-h-[calc(100vh-1.5rem)]">
+                    {header &&
+                        <>
+                            <div className="flex justify-between items-center px-6 py-4">
+                                <h1 className="font-semibold text-lg">{title}</h1>
+                                <button className="btn btn-ghost btn-sm">
+                                    <img src={BellBlackSVG} alt="Icon Bell" className="object-contain" />
+                                </button>
+                            </div>
+                            <hr className="bg-gray-300" />
+                        </>
+                    }
                     <div className="p-6">
                         {children}
                     </div>

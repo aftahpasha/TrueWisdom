@@ -108,7 +108,7 @@ const Checkout = () => {
                                             value={codePromo}
                                             onChange={(e) => setCodePromo(e.target.value)}
                                             placeholder="Masukkan code promo"
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                         />
                                         {selectedPromo != null &&
                                             <div className="absolute top-1/2 right-6 -translate-y-1/2 translate-x-1/2">
@@ -152,7 +152,7 @@ const Checkout = () => {
                                                 type="text"
                                                 id="receive_name"
                                                 placeholder="Masukkan nama penerima"
-                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                                 required
                                             />
                                         </div>
@@ -164,7 +164,7 @@ const Checkout = () => {
                                                 type="text"
                                                 id="receive_email"
                                                 placeholder="Masukkan email penerima"
-                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                                 required
                                             />
                                         </div>

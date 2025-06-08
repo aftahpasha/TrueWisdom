@@ -20,7 +20,7 @@ const Register = () => {
                             type="text"
                             id="full_name"
                             placeholder="Masukkan nama lengkap kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>
@@ -32,7 +32,7 @@ const Register = () => {
                             type="email"
                             id="email"
                             placeholder="Masukkan email kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>
@@ -44,7 +44,7 @@ const Register = () => {
                             type="text"
                             id="no_telephone"
                             placeholder="Masukkan nomor telepon kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>
@@ -56,7 +56,7 @@ const Register = () => {
                             type="password"
                             id="password"
                             placeholder="Masukkan kata sandi kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>
