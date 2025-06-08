@@ -15,7 +15,7 @@ const CallToActionSection = () => {
   };
 
   const handleSendGift = () => {
-    window.location.href = "https://truewisdom.id/checkout";
+    window.location.href = "/checkout";
   };
 
   return (

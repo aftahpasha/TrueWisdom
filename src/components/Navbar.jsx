@@ -4,6 +4,7 @@ import AvatarImage from '../../assets/images/avatar.jpg';
 import DashboardPrimarySVG from '../../assets/images/dashboard_primary.svg';
 import LogoutErrorSVG from '../../assets/images/logout_error.svg';
 import Button from './ui/Button';
+import ArrowDownPrimarySVG from '../../assets/images/arrow_down_primary.svg';
 
 // Import assets
 import unionSvg from '../../assets/images/union_18.svg';
