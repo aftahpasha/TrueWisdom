@@ -30,7 +30,7 @@ const DetailedPricingCard = ({ plan }) => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-[rgba(251,241,255,1.00)] border border-[#bea2dcff] h-full w-full p-6 sm:p-8 rounded-3xl flex flex-col gap-6 sm:gap-8">
+    <div className="relative bg-[rgba(251,241,255,1.00)] border border-[#bea2dcff] h-full w-full p-6 sm:p-8 rounded-3xl flex flex-col gap-6 sm:gap-8">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:gap-5">
         <div className="bg-brand-purple h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center p-2 rounded-2xl">

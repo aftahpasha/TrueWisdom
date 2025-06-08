@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from './ui/Button';
 import sparkIcon from '../../assets/images/vector.svg'; // Assuming this is the spark icon
 import ModalQuoteSent from './modal/ModalQuoteSent';
+import ModalSubscription from './modal/ModalSubscription';
 
 const categories = [
   { id: 'truelove', name: 'TrueLove' },
@@ -28,8 +29,8 @@ const HeroForm = () => {
       email,
     });
     // Add form submission logic (e.g., API call)
-    modal_quote_sent.showModal();
-    // alert('Form submitted! Check console for data.');
+    // modal_quote_sent.showModal();
+    modal_subscription.showModal();
   };
 
   return (
@@ -98,6 +99,7 @@ const HeroForm = () => {
       </Button>
 
       <ModalQuoteSent />
+      <ModalSubscription />
     </form>
   );
 };
