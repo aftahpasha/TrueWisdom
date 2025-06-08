@@ -2,11 +2,14 @@ import SignInQuotesImage from '../../assets/images/signin_quotes.png';
 import LogoImage from '../../assets/images/logo.png';
 import LogoGoogleImage from '../../assets/images/logo_google.png';
 import Button from '../components/ui/Button';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        window.location.href = '/checkout';
+        navigate('/checkout');
     }
 
     return (
@@ -19,7 +22,7 @@ const SignIn = () => {
                         className="object-cover pointer-events-none h-full w-full max-w-[3.75rem] max-h-[3.75rem] mb-4"
                     />
                     <h2 className='font-semibold text-[2rem] leading-[2.5rem] mb-2 text-center'>Selamat Datang Kembali!</h2>
-                    <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <a href='/register' className='text-brand-purple font-medium'>Daftar</a></p>
+                    <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <Link to='/register' className='text-brand-purple font-medium'>Daftar</Link></p>
                     <form onSubmit={handleSubmit} className='w-full'>
                         <div className='mb-4'>
                             <label htmlFor="email" className="block text-sm font-medium text-brand-purple-dark mb-1.5">
@@ -45,7 +48,7 @@ const SignIn = () => {
                                 required
                             />
                         </div>
-                        <a href='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</a>
+                        <Link to='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</Link>
                         <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal">
                             <span className='font-normal'>Masuk</span>
                         </Button>

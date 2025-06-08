@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import BackgroundRegisterImage from '../../assets/images/background_register.png';
 import Logo2Image from '../../assets/images/logo_2.png';
 import LogoGoogleImage from '../../assets/images/logo_google.png';
@@ -77,7 +78,7 @@ const Register = () => {
                     />
                     <span className='text-black font-normal'>Masuk dengan Google</span>
                 </Button>
-                <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Sudah punya akun? <a href='/sign-in' className='text-brand-purple font-medium'>Masuk</a></p>
+                <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Sudah punya akun? <Link to='/sign-in' className='text-brand-purple font-medium'>Masuk</Link></p>
             </form>
         </div>
     );

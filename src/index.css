@@ -117,3 +117,37 @@
 }
 Tailwind's container class already does this, or use max-w-screen-* utilities.
 */
+
+table th {
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.875rem;
+  background-color: #fbf1ff;
+  @apply border-t border-b border-gray-100;
+}
+
+table th:nth-child(1) {
+  border-radius: 0.75rem 0px 0px 0px;
+  @apply border-l border-gray-100;
+}
+
+table th:nth-last-child(1) {
+  border-radius: 0px 0.75rem 0px 0px;
+  @apply border-r border-gray-100;
+}
+
+table td {
+  padding: 1rem 0.75rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  @apply border-t border-b border-gray-100;
+}
+
+table td:nth-child(1) {
+  @apply border-l border-gray-100;
+}
+
+table td:nth-last-child(1) {
+  @apply border-r border-gray-100;
+}

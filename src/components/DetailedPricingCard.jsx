@@ -7,8 +7,11 @@ import checkCircleIcon from '../../assets/images/vector_2.svg'; // Assuming this
 import checkboxCircleUnchecked from '../../assets/images/svg.svg'; // Placeholder for unchecked
 import checkboxCircleChecked from '../../assets/images/vector_2.svg'; // Placeholder for checked (same as checkCircleIcon for now)
 import dividerSvg from '../../assets/images/divider.svg';
+import { useNavigate } from 'react-router-dom';
 
 const DetailedPricingCard = ({ plan }) => {
+  const navigate = useNavigate();
+
   const [selectedDuration, setSelectedDuration] = useState(plan.durations[0]);
   const [sendAsGift, setSendAsGift] = useState(false);
 
@@ -25,7 +28,7 @@ const DetailedPricingCard = ({ plan }) => {
   const handleBuyPackage = () => {
     console.log("Buy Package clicked for:", plan.title, "Duration:", selectedDuration.label, "Gift:", sendAsGift);
     // alert(`Buying ${plan.title} for ${selectedDuration.label}. Gift: ${sendAsGift}`);
-    window.location.href = '/checkout';
+    navigate('/checkout');
   };
 
   return (

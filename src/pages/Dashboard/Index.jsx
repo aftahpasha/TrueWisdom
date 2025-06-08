@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SharePrimarySVG from '../../../assets/images/share_primary.svg';
 import DownloadHoneyYellowSVG from '../../../assets/images/download_honey_yellow.svg';
 import SendHoneyYellowSVG from '../../../assets/images/send_honey_yellow.svg';
@@ -6,8 +6,19 @@ import SearchBlackSVG from '../../../assets/images/search_black.svg';
 import GridBlackSVG from '../../../assets/images/grid_black.svg';
 import MenuBlackSVG from '../../../assets/images/menu_black.svg';
 import DashboardLayout from "../../layouts/dashboard";
+import GridHistoryQuotes from "../../components/dashboard/GridHistoryQuotes";
+import TableHistoryQuotes from "../../components/dashboard/TableHistoryQuotes";
+import ModalFeelToday from "../../components/modal/ModalFeelToday";
+import ModalFeelTodaySent from "../../components/modal/ModalFeelTodaySent";
 
 const Dashboard = () => {
+    const [viewHistoryQuotes, setViewHistoryQuotes] = useState(0);
+
+    const typeHistoryQuotes = [
+        <TableHistoryQuotes />,
+        <GridHistoryQuotes />
+    ];
+
     return (
         <DashboardLayout>
             <h3 className="font-semibold text-2xl mb-6">Selamat Datang Kembali, John Cornor 👋</h3>
@@ -23,7 +34,7 @@ const Dashboard = () => {
                         </p>
                         <hr className="my-5" />
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-                            <button className="btn btn-link text-brand-purple-dark">
+                            <button className="btn btn-link text-brand-purple-dark" onClick={() => modal_feel_today.showModal()}>
                                 Bagaimana perasaanmu hari ini?
                             </button>
                             <div className="flex items-center gap-3">
@@ -67,10 +78,10 @@ const Dashboard = () => {
                 <h4 className="font-medium text-xl">Riwayat Qoute</h4>
                 <div className="flex gap-6 items-center">
                     <div className="flex items-center gap-4">
-                        <button className="btn btn-ghost btn-sm">
+                        <button className={`btn btn-ghost btn-sm ${viewHistoryQuotes == 0 && 'bg-gray-100'}`} onClick={() => setViewHistoryQuotes(0)}>
                             <img src={GridBlackSVG} alt="Icon Grid" className="object-contain" />
                         </button>
-                        <button className="btn btn-ghost btn-sm">
+                        <button className={`btn btn-ghost btn-sm ${viewHistoryQuotes == 1 && 'bg-gray-100'}`} onClick={() => setViewHistoryQuotes(1)}>
                             <img src={MenuBlackSVG} alt="Icon Menu" className="object-contain" />
                         </button>
                     </div>
@@ -87,29 +98,9 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                {Array(6).fill(null).map(() =>
-                    <div className="px-8 pt-8 pb-5 bg-[#FBF1FF] rounded-lg">
-                        <div className="flex justify-between items-center text-brand-purple-dark mb-5">
-                            <p>Quote</p>
-                            <p>5 April 2025</p>
-                        </div>
-                        <p className="text-brand-purple-dark font-semibold text-xl mb-11">
-                            "Ketenangan bukanlah hidup tanpa tantangan, melainkan keyakinan bahwa segalanya akan berada pada tempatnya."
-                        </p>
-                        <hr className="mb-5" />
-                        <div className="flex justify-end items-center gap-4">
-                            <button className="btn btn-ghost btn-sm">
-                                <img src={SharePrimarySVG} alt="Icon Share" className="object-contain" />
-                            </button>
-                            <button className="hover:bg-brand-honey-yellow/80 bg-brand-honey-yellow rounded-full px-5 py-3 font-semibold flex gap-2 text-brand-honey-yellow-dark">
-                                <img src={DownloadHoneyYellowSVG} alt="Icon Download" className="object-contain" />
-                                <span>Unduh Photocard</span>
-                            </button>
-                        </div>
-                    </div>
-                )}
-            </div>
+            {typeHistoryQuotes[viewHistoryQuotes]}
+            <ModalFeelToday />
+            <ModalFeelTodaySent />
         </DashboardLayout>
     );
 };
