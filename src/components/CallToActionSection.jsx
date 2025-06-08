@@ -13,8 +13,7 @@ const CallToActionSection = () => {
   const navigate = useNavigate();
 
   const handleTryFree = () => {
-    console.log("Coba Gratis Sekarang clicked");
-    alert("Redirecting to free trial sign up!");
+    window.location.href = "/checkout";
   };
 
   const handleSendGift = () => {

@@ -26,8 +26,6 @@ const DetailedPricingCard = ({ plan }) => {
   };
 
   const handleBuyPackage = () => {
-    console.log("Buy Package clicked for:", plan.title, "Duration:", selectedDuration.label, "Gift:", sendAsGift);
-    // alert(`Buying ${plan.title} for ${selectedDuration.label}. Gift: ${sendAsGift}`);
     navigate('/checkout');
   };
 
