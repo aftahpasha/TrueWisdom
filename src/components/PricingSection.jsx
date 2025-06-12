@@ -3,7 +3,7 @@ import PricingOption from './PricingOption';
 import DetailedPricingCard from './DetailedPricingCard';
 
 // Import icons for plans if available, or use placeholders
-import trueLoveIcon from '../../assets/images/vector_1.svg'; // Example, replace with actual icons
+import trueLoveIcon from '/assets/images/vector_1.svg'; // Example, replace with actual icons
 // import trueFaithIcon from '../../assets/images/some_icon.svg';
 // import trueAffirmIcon from '../../assets/images/some_icon.svg';
 // import trueFriendIcon from '../../assets/images/some_icon.svg';
@@ -51,7 +51,7 @@ const pricingPlansData = [
     title: "TrueAffirm",
     price: "Rp 15.000",
     // icon: trueAffirmIcon, // Placeholder for actual icon path
-    icon: '../../assets/images/vector_4.svg', // Example, replace with actual icon
+    icon: '/assets/images/vector_4.svg', // Example, replace with actual icon
     description: "Untuk kamu yang butuh afirmasi positif untuk memulai hari dengan semangat dan percaya diri.",
     durations: [
       { label: "7 Hari", price: "Rp 15.000" },

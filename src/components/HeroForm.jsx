@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Button from './ui/Button';
-import sparkIcon from '../../assets/images/vector.svg'; // Assuming this is the spark icon
 import ModalQuoteSent from './modal/ModalQuoteSent';
 import ModalSubscription from './modal/ModalSubscription';
 
@@ -94,7 +93,7 @@ const HeroForm = () => {
       </div>
 
       <Button type="submit" variant="primary" size="md" className="w-full flex items-center justify-center gap-2.5">
-        <img src={sparkIcon} alt="" className="h-4 w-4" />
+        <img src="/assets/images/vector.svg" alt="" className="h-4 w-4" />
         Sisa 4 Quotes Gratis
       </Button>
 

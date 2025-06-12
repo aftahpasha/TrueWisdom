@@ -11,7 +11,19 @@ const ModalLogout = () => {
                 <Button type="button" variant="outline" size="md" className="w-full rounded-full">
                     <span>Batal</span>
                 </Button>
-                <Button type="button" variant="primary" size="md" className="w-full rounded-full">
+                <Button
+                    type="button"
+                    variant="primary"
+                    size="md"
+                    className="w-full rounded-full"
+                    onClick={() => {
+                        if (typeof window !== 'undefined') {
+                            localStorage.removeItem('token');
+                            localStorage.removeItem('user');
+                            window.location.href = '/sign-in';
+                        }
+                    }}
+                >
                     <span className='text-white'>Keluar Akun</span>
                 </Button>
             </div>

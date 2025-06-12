@@ -8,8 +8,21 @@ import Link from "next/link";
 import { useState } from "react";
 import ModalLogout from "../components/modal/ModalLogout";
 
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 const DashboardLayout = ({ children, header = true, title = 'Dashboard' }) => {
     const pathname = usePathname();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                router.replace('/sign-in');
+            }
+        }
+    }, [router]);
 
     const topMenus = [
         {
@@ -130,8 +143,27 @@ const DashboardLayout = ({ children, header = true, title = 'Dashboard' }) => {
                         <button className="btn btn-ghost flex gap-3 justify-start items-center p-1">
                             <img src="/assets/images/avatar.jpg" alt="Avatar" className="h-8 w-8 object-cover rounded-full" />
                             <div className="flex-grow flex flex-col items-start">
-                                <p className="font-semibold text-sm">John Cornor</p>
-                                <p className="text-xs text-brand-gray">Johncornor@mail.com</p>
+                                {typeof window !== 'undefined' && localStorage.getItem('user') ? (
+                                    (() => {
+                                        try {
+                                            const user = JSON.parse(localStorage.getItem('user'));
+                                            return <>
+                                                <p className="font-semibold text-sm">{user.full_name || user.name || 'User'}</p>
+                                                <p className="text-xs text-brand-gray">{user.email}</p>
+                                            </>;
+                                        } catch {
+                                            return <>
+                                                <p className="font-semibold text-sm">User</p>
+                                                <p className="text-xs text-brand-gray">-</p>
+                                            </>;
+                                        }
+                                    })()
+                                ) : (
+                                    <>
+                                        <p className="font-semibold text-sm">User</p>
+                                        <p className="text-xs text-brand-gray">-</p>
+                                    </>
+                                )}
                             </div>
                         </button>
                     </div>

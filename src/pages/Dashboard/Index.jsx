@@ -1,4 +1,5 @@
 import React from "react";
+import ModalFeelToday from "../../components/modal/ModalFeelToday";
 import DashboardLayout from "../../layouts/dashboard";
 // Asset imports removed; use public asset paths instead
 import TableHistoryQuotes from "../../components/dashboard/TableHistoryQuotes";
@@ -29,7 +30,15 @@ const Dashboard = () => {
                         </p>
                         <hr className="my-5" />
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-                            <button className="btn btn-link text-brand-purple-dark">
+                            <button
+                                className="btn btn-link text-brand-purple-dark"
+                                type="button"
+                                onClick={() => {
+                                    if (typeof window !== 'undefined' && window.modal_feel_today) {
+                                        window.modal_feel_today.showModal();
+                                    }
+                                }}
+                            >
                                 Bagaimana perasaanmu hari ini?
                             </button>
                             <div className="flex items-center gap-3">
@@ -116,6 +125,7 @@ const Dashboard = () => {
                     </div>
                 )}
             </div>
+            <ModalFeelToday />
         </DashboardLayout>
     );
 };
