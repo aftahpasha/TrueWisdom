@@ -2,16 +2,6 @@ import React, { useState } from 'react';
 import Button from './ui/Button';
 
 // Import assets
-<<<<<<< HEAD
-
-=======
-import handHeartIcon from '../../assets/images/vector_1.svg';
-import checkCircleIcon from '../../assets/images/vector_2.svg'; // Assuming this is the check icon
-import checkboxCircleUnchecked from '../../assets/images/svg.svg'; // Placeholder for unchecked
-import checkboxCircleChecked from '../../assets/images/vector_2.svg'; // Placeholder for checked (same as checkCircleIcon for now)
-import dividerSvg from '../../assets/images/divider.svg';
-import { useNavigate } from 'react-router-dom';
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 
 const DetailedPricingCard = ({ plan }) => {
   const navigate = useNavigate();

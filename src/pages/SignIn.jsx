@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-=======
-import SignInQuotesImage from '../../assets/images/signin_quotes.png';
-import LogoImage from '../../assets/images/logo.png';
-import LogoGoogleImage from '../../assets/images/logo_google.png';
-import Button from '../components/ui/Button';
-import { Link, useNavigate } from 'react-router-dom';
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 
 
 import { useState } from 'react';
 import api from '../utils/api';
 import Button from '../components/ui/Button';
 const SignIn = () => {
-<<<<<<< HEAD
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -43,13 +34,6 @@ const SignIn = () => {
         } finally {
             setLoading(false);
         }
-=======
-    const navigate = useNavigate();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        navigate('/checkout');
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
     }
 
     return (
@@ -92,16 +76,10 @@ const SignIn = () => {
                                 onChange={e => setPassword(e.target.value)}
                             />
                         </div>
-<<<<<<< HEAD
                         <a href='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</a>
                         {error && <div className="text-red-500 text-sm mb-2 text-center">{error}</div>}
                         <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal" disabled={loading}>
                             <span className='font-normal'>{loading ? 'Memproses...' : 'Masuk'}</span>
-=======
-                        <Link to='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</Link>
-                        <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal">
-                            <span className='font-normal'>Masuk</span>
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
                         </Button>
                         <div className='flex flex-row justify-center items-center gap-6 mb-4'>
                             <hr className='flex-grow' />

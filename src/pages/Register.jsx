@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-
-=======
-import { Link } from 'react-router-dom';
-import BackgroundRegisterImage from '../../assets/images/background_register.png';
-import Logo2Image from '../../assets/images/logo_2.png';
-import LogoGoogleImage from '../../assets/images/logo_google.png';
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 import Button from '../components/ui/Button';
 import { useState } from 'react';
 import api from '../utils/api';

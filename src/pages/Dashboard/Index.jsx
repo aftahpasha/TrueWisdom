@@ -1,23 +1,10 @@
-<<<<<<< HEAD
 import React from "react";
-import ModalFeelToday from "../../components/modal/ModalFeelToday";
-import ModalFeelTodaySent from "../../components/modal/ModalFeelTodaySent";
 import DashboardLayout from "../../layouts/dashboard";
-
-=======
-import React, { useState } from "react";
-import SharePrimarySVG from '../../../assets/images/share_primary.svg';
-import DownloadHoneyYellowSVG from '../../../assets/images/download_honey_yellow.svg';
-import SendHoneyYellowSVG from '../../../assets/images/send_honey_yellow.svg';
-import SearchBlackSVG from '../../../assets/images/search_black.svg';
-import GridBlackSVG from '../../../assets/images/grid_black.svg';
-import MenuBlackSVG from '../../../assets/images/menu_black.svg';
-import DashboardLayout from "../../layouts/dashboard";
-import GridHistoryQuotes from "../../components/dashboard/GridHistoryQuotes";
+// Asset imports removed; use public asset paths instead
 import TableHistoryQuotes from "../../components/dashboard/TableHistoryQuotes";
-import ModalFeelToday from "../../components/modal/ModalFeelToday";
-import ModalFeelTodaySent from "../../components/modal/ModalFeelTodaySent";
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
+import GridHistoryQuotes from "../../components/dashboard/GridHistoryQuotes";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const Dashboard = () => {
     const [viewHistoryQuotes, setViewHistoryQuotes] = useState(0);
@@ -42,19 +29,7 @@ const Dashboard = () => {
                         </p>
                         <hr className="my-5" />
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-<<<<<<< HEAD
-                            <button
-                                className="btn btn-link text-brand-purple-dark"
-                                type="button"
-                                onClick={() => {
-                                    if (typeof window !== 'undefined' && window.modal_feel_today) {
-                                        window.modal_feel_today.showModal();
-                                    }
-                                }}
-                            >
-=======
-                            <button className="btn btn-link text-brand-purple-dark" onClick={() => modal_feel_today.showModal()}>
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
+                            <button className="btn btn-link text-brand-purple-dark">
                                 Bagaimana perasaanmu hari ini?
                             </button>
                             <div className="flex items-center gap-3">
@@ -98,19 +73,11 @@ const Dashboard = () => {
                 <h4 className="font-medium text-xl">Riwayat Qoute</h4>
                 <div className="flex gap-6 items-center">
                     <div className="flex items-center gap-4">
-<<<<<<< HEAD
                         <button className="btn btn-ghost btn-sm">
                             <img src="/assets/images/grid_black.svg" alt="Icon Grid" className="object-contain" />
                         </button>
                         <button className="btn btn-ghost btn-sm">
                             <img src="/assets/images/menu_black.svg" alt="Icon Menu" className="object-contain" />
-=======
-                        <button className={`btn btn-ghost btn-sm ${viewHistoryQuotes == 0 && 'bg-gray-100'}`} onClick={() => setViewHistoryQuotes(0)}>
-                            <img src={GridBlackSVG} alt="Icon Grid" className="object-contain" />
-                        </button>
-                        <button className={`btn btn-ghost btn-sm ${viewHistoryQuotes == 1 && 'bg-gray-100'}`} onClick={() => setViewHistoryQuotes(1)}>
-                            <img src={MenuBlackSVG} alt="Icon Menu" className="object-contain" />
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
                         </button>
                     </div>
                     <div className='h-6 w-1 border-l-2 border-gray-300'></div>
@@ -126,7 +93,6 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {Array(6).fill(null).map((_, idx) =>
                     <div key={idx} className="px-8 pt-8 pb-5 bg-[#FBF1FF] rounded-lg">
@@ -150,11 +116,6 @@ const Dashboard = () => {
                     </div>
                 )}
             </div>
-=======
-            {typeHistoryQuotes[viewHistoryQuotes]}
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
-            <ModalFeelToday />
-            <ModalFeelTodaySent />
         </DashboardLayout>
     );
 };

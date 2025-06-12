@@ -2,24 +2,15 @@ import React, { useState } from 'react';;
 import ModalBase from './Base';;
 
 // Import icons for plans if available, or use placeholders
-<<<<<<< HEAD
-
-=======
-import trueLoveIcon from '../../../assets/images/vector_1.svg'; // Example, replace with actual icons
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 import DetailedPricingCard from '../DetailedPricingCard';
-import { useLocation } from 'react-router-dom';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const pricingPlansData = [
     {
         id: 'truelove',
         title: "TrueLove",
         price: "Rp 15.000",
-<<<<<<< HEAD
         icon: '/assets/images/vector_1.svg',
-=======
-        icon: trueLoveIcon,
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
         description: "Untuk kamu yang sedang jatuh cinta, rindu, atau butuh ruang untuk mencintai diri sendiri.",
         durations: [
             { label: "7 Hari", price: "Rp 15.000" },
@@ -39,11 +30,7 @@ const pricingPlansData = [
         title: "TrueFaith",
         price: "Rp 15.000",
         // icon: trueFaithIcon, // Placeholder for actual icon path
-<<<<<<< HEAD
         icon: '/assets/images/vector_3.svg',
-=======
-        icon: '../../../assets/images/vector_3.svg', // Example, replace with actual icon
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
         description: "Untuk kamu yang mencari ketenangan spiritual dan penguatan iman dalam setiap langkah.",
         durations: [
             { label: "7 Hari", price: "Rp 15.000" },
@@ -61,11 +48,7 @@ const pricingPlansData = [
         title: "TrueAffirm",
         price: "Rp 15.000",
         // icon: trueAffirmIcon, // Placeholder for actual icon path
-<<<<<<< HEAD
         icon: '/assets/images/vector_4.svg',
-=======
-        icon: '../../../assets/images/vector_4.svg', // Example, replace with actual icon
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
         description: "Untuk kamu yang butuh afirmasi positif untuk memulai hari dengan semangat dan percaya diri.",
         durations: [
             { label: "7 Hari", price: "Rp 15.000" },
@@ -98,8 +81,18 @@ const pricingPlansData = [
     }
 ];
 
+
 const ModalSubscription = () => {
-    const { hash } = useLocation();
+    // Next.js App Router does not provide hash directly; use useSearchParams or window.location.hash (client only)
+    const [hash, setHash] = useState('');
+    React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            setHash(window.location.hash);
+        }
+        const onHashChange = () => setHash(window.location.hash);
+        window.addEventListener('hashchange', onHashChange);
+        return () => window.removeEventListener('hashchange', onHashChange);
+    }, []);
 
     return (
         <ModalBase modal_id='modal_subscription'>
@@ -107,14 +100,18 @@ const ModalSubscription = () => {
             <p className='text-center text-brand-gray mb-8'>Tapi kamu bisa tetap mendapatkan afirmasi harian yang sesuai hatimu — cukup dengan berlangganan paket sesuai topik yang kamu butuhkan.</p>
             <div className="carousel w-full">
                 {pricingPlansData.map((plan, index) => (
-                    <div id={`pricing-${index + 1}`} className="carousel-item w-full">
+                    <div id={`pricing-${index + 1}`} className="carousel-item w-full" key={plan.id}>
                         <DetailedPricingCard plan={plan} />
                     </div>
                 ))}
             </div>
             <div className="flex w-full justify-center gap-2 py-2">
                 {pricingPlansData.map((plan, index) =>
-                    <a href={`#pricing-${index + 1}`} className={`h-4 w-4 rounded-full ${hash == `#pricing-${index + 1}` ? 'bg-brand-purple ' : 'bg-[#F2ECF8]'}`}></a>
+                    <a
+                        key={plan.id}
+                        href={`#pricing-${index + 1}`}
+                        className={`h-4 w-4 rounded-full ${hash === `#pricing-${index + 1}` ? 'bg-brand-purple ' : 'bg-[#F2ECF8]'}`}
+                    ></a>
                 )}
             </div>
         </ModalBase>

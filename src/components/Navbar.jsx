@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
-<<<<<<< HEAD
 import Button from './ui/Button';
-=======
-// Import assets
-import unionSvg from '../../assets/images/union_18.svg';
-import trueWisdomSvg from '../../assets/images/truewisdom_17.svg';
-import { useNavigate } from 'react-router-dom';
->>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 
 const NavLink = ({ href, children }) => {
   const navigate = useNavigate();
