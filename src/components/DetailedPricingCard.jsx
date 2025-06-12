@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Button from './ui/Button';
 
-// Import assets
-
 const DetailedPricingCard = ({ plan }) => {
-  const navigate = useNavigate();
+
+  // Next.js navigation
+  const { useRouter } = require('next/navigation');
+  const router = useRouter();
 
   const [selectedDuration, setSelectedDuration] = useState(plan.durations[0]);
   const [sendAsGift, setSendAsGift] = useState(false);
@@ -20,7 +21,7 @@ const DetailedPricingCard = ({ plan }) => {
   };
 
   const handleBuyPackage = () => {
-    navigate('/checkout');
+    router.push('/checkout');
   };
 
   return (

@@ -1,29 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
+
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import Button from './ui/Button';
 
-const NavLink = ({ href, children }) => {
-  const navigate = useNavigate();
-
-  return (
-    <a
-      href={href}
-      className="text-brand-purple-dark hover:text-brand-purple font-medium transition-colors duration-300"
-      onClick={(e) => {
-        e.preventDefault();
-        navigate(href);
-      }}
-    >
-      {children}
-    </a>
-  )
-};
+const NavLink = ({ href, children }) => (
+  <Link
+    href={href}
+    className="text-brand-purple-dark hover:text-brand-purple font-medium transition-colors duration-300"
+    scroll={href.startsWith('#') ? false : undefined}
+  >
+    {children}
+  </Link>
+);
 
 const Navbar = ({ authenticated = false }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Add scroll event listener
   useEffect(() => {
@@ -48,10 +44,10 @@ const Navbar = ({ authenticated = false }) => {
   };
 
   const handleAuthAction = (action) => {
-    if (action == 'Masuk') {
-      navigate('/sign-in');
+    if (action === 'Masuk') {
+      router.push('/sign-in');
     } else {
-      navigate('/register');
+      router.push('/register');
     }
     // Add actual authentication logic here
   };
@@ -70,10 +66,10 @@ const Navbar = ({ authenticated = false }) => {
       }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-20 h-[76px] flex justify-between items-center">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5" onClick={(e) => e.preventDefault()}>
+        <Link href="/" className="flex items-center gap-2.5">
           <img src="/assets/images/union_18.svg" alt="TrueWisdom Logo Icon" className="h-8 w-8" />
           <img src="/assets/images/truewisdom_17.svg" alt="TrueWisdom Logo Text" className="h-5" />
-        </a>
+        </Link>
 
         {/* Desktop Navigation Links */}
         <div className="hidden lg:flex items-center space-x-8">
@@ -92,16 +88,16 @@ const Navbar = ({ authenticated = false }) => {
             </Button>
             <ul tabIndex="0" className="dropdown-content menu rounded-lg shadow bg-white">
               <li>
-                <a className='text-brand-purple flex items-center gap-2'>
-                <img src="/assets/images/dashboard_primary.svg" alt="Arrow Down" className="object-contain" />
+                <Link href="/dashboard" className='text-brand-purple flex items-center gap-2'>
+                  <img src="/assets/images/dashboard_primary.svg" alt="Arrow Down" className="object-contain" />
                   <p className='font-medium text-lg'>Dashboard</p>
-                </a>
+                </Link>
               </li>
               <li>
-                <a className='text-error flex items-center gap-2'>
-                <img src="/assets/images/logout_error.svg" alt="Arrow Down" className="object-contain" />
+                <button className='text-error flex items-center gap-2' type="button">
+                  <img src="/assets/images/logout_error.svg" alt="Arrow Down" className="object-contain" />
                   <p className='font-medium text-lg'>Keluar</p>
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -149,16 +145,16 @@ const Navbar = ({ authenticated = false }) => {
                       </Button>
                       <ul tabIndex="0" className="dropdown-content menu rounded-lg shadow bg-white">
                         <li>
-                          <a className='text-brand-purple flex items-center gap-2'>
-                <img src="/assets/images/dashboard_primary.svg" alt="Arrow Down" className="object-contain" />
+                          <Link href="/dashboard" className='text-brand-purple flex items-center gap-2'>
+                            <img src="/assets/images/dashboard_primary.svg" alt="Arrow Down" className="object-contain" />
                             <p className='font-medium text-lg'>Dashboard</p>
-                          </a>
+                          </Link>
                         </li>
                         <li>
-                          <a className='text-error flex items-center gap-2'>
-                <img src="/assets/images/logout_error.svg" alt="Arrow Down" className="object-contain" />
+                          <button className='text-error flex items-center gap-2' type="button">
+                            <img src="/assets/images/logout_error.svg" alt="Arrow Down" className="object-contain" />
                             <p className='font-medium text-lg'>Keluar</p>
-                          </a>
+                          </button>
                         </li>
                       </ul>
                     </div>

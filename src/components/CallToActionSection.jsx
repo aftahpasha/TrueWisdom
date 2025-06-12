@@ -6,15 +6,17 @@ import Button from './ui/Button';
 // For simplicity in refactoring, I'm using simpler decorative elements.
 // If the exact visual is needed, it would require more complex absolute positioning.
 
+import { useRouter } from 'next/navigation';
+
 const CallToActionSection = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleTryFree = () => {
-    window.location.href = "/checkout";
+    router.push("/checkout");
   };
 
   const handleSendGift = () => {
-    navigate("/checkout")
+    router.push("/checkout");
   };
 
   return (

@@ -1,8 +1,10 @@
 
 
 import { useState } from 'react';
+import Link from 'next/link';
 import api from '../utils/api';
 import Button from '../components/ui/Button';
+
 const SignIn = () => {
 
     const [email, setEmail] = useState('');
@@ -46,7 +48,7 @@ const SignIn = () => {
                         className="object-cover pointer-events-none h-full w-full max-w-[3.75rem] max-h-[3.75rem] mb-4"
                     />
                     <h2 className='font-semibold text-[2rem] leading-[2.5rem] mb-2 text-center'>Selamat Datang Kembali!</h2>
-                    <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <Link to='/register' className='text-brand-purple font-medium'>Daftar</Link></p>
+<p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <Link href="/register" className='text-brand-purple font-medium'>Daftar</Link></p>
                     <form onSubmit={handleSubmit} className='w-full'>
                         <div className='mb-4'>
                             <label htmlFor="email" className="block text-sm font-medium text-brand-purple-dark mb-1.5">

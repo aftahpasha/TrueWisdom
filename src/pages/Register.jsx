@@ -1,7 +1,7 @@
 import Button from '../components/ui/Button';
 import { useState } from 'react';
 import api from '../utils/api';
-
+import Link from 'next/link';
 const Register = () => {
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -111,7 +111,7 @@ const Register = () => {
                     />
                     <span className='text-black font-normal'>Masuk dengan Google</span>
                 </Button>
-                <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Sudah punya akun? <Link to='/sign-in' className='text-brand-purple font-medium'>Masuk</Link></p>
+                <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Sudah punya akun? <Link href='/sign-in' className='text-brand-purple font-medium'>Masuk</Link></p>
             </form>
         </div>
     );
