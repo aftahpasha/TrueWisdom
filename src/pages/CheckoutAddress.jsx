@@ -27,10 +27,10 @@ const CheckoutAddress = () => {
                 {/* Background Gradient */}
                 <div className="absolute inset-x-0 top-[100px] h-[743px] bg-[linear-gradient(180.0deg,rgba(229,210,253,1.00)_0.0%,rgba(229,211,253,0.00)_100.0%)]"></div>
                 <div className="absolute top-0 left-0 right-0 h-[100px] bg-[rgba(229,211,253,1.00)]"></div>
-                
+
                 <div className="container mx-auto px-4 sm:px-6 lg:px-20 relative z-10 pt-16 pb-24">
                     <h3 className="font-semibold text-[2rem] mb-5">Checkout Paket</h3>
-                    
+
                     <div className="flex flex-col lg:flex-row gap-6">
                         {/* Left Column - Address & Package Details */}
                         <div className="lg:w-[65%] space-y-6">
@@ -43,7 +43,7 @@ const CheckoutAddress = () => {
                                     </button>
                                 </div>
                                 <hr className="mb-4" />
-                                
+
                                 <div className="space-y-3">
                                     <div className="flex items-start gap-3">
                                         <div className="bg-brand-purple text-white px-2 py-1 rounded text-xs font-medium">
@@ -65,7 +65,7 @@ const CheckoutAddress = () => {
                             <div className="bg-white rounded-xl border border-brand-gray-light p-6">
                                 <h4 className="font-semibold text-xl leading-6">Detail Paket</h4>
                                 <hr className="my-4" />
-                                
+
                                 <div className="flex flex-col gap-5">
                                     <div className="flex justify-between items-start">
                                         <div className="flex-1">
@@ -81,7 +81,7 @@ const CheckoutAddress = () => {
                                             <p className="font-semibold text-lg text-brand-purple">Rp. 25.000</p>
                                         </div>
                                     </div>
-                                    
+
                                     <div className="space-y-3">
                                         <div className="flex items-center gap-3">
                                             <img src={CheckPrimarySVG} alt="Check Icon" className="object-contain flex-shrink-0" />
@@ -124,7 +124,7 @@ const CheckoutAddress = () => {
                                             value={codePromo}
                                             onChange={(e) => setCodePromo(e.target.value)}
                                             placeholder="Masukkan code promo"
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                         />
                                         {selectedPromo != null &&
                                             <div className="absolute top-1/2 right-6 -translate-y-1/2 translate-x-1/2">
@@ -170,7 +170,7 @@ const CheckoutAddress = () => {
                                                 type="text"
                                                 id="receive_name"
                                                 placeholder="Masukkan nama penerima"
-                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                                 required
                                             />
                                         </div>
@@ -182,7 +182,7 @@ const CheckoutAddress = () => {
                                                 type="text"
                                                 id="receive_email"
                                                 placeholder="Masukkan email penerima"
-                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                                 required
                                             />
                                         </div>
@@ -197,9 +197,9 @@ const CheckoutAddress = () => {
                                     <p className="font-semibold text-lg">Otomatis</p>
                                 </div>
                                 <hr className="mb-4" />
-                                
+
                                 <h5 className="font-semibold text-xl mb-4">Ringkasan Pembayaran</h5>
-                                
+
                                 <div className="space-y-3 mb-6">
                                     <div className="flex justify-between items-center">
                                         <p className="text-brand-gray-dark">Sub Total (1 item)</p>
@@ -223,7 +223,7 @@ const CheckoutAddress = () => {
                                         <p className="font-bold text-xl text-brand-purple">Rp. 27.150</p>
                                     </div>
                                 </div>
-                                
+
                                 <Button type="button" variant="primary" size="md" className="w-full rounded-xl flex gap-3 justify-center items-center">
                                     <span className='font-medium'>Bayar Sekarang</span>
                                     <img src={ArrowRightWhiteSVG} alt="Arrow Right Icon" className="object-contain" />

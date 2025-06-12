@@ -2,9 +2,20 @@ import React, { useState } from 'react';
 import Button from './ui/Button';
 
 // Import assets
+<<<<<<< HEAD
 
+=======
+import handHeartIcon from '../../assets/images/vector_1.svg';
+import checkCircleIcon from '../../assets/images/vector_2.svg'; // Assuming this is the check icon
+import checkboxCircleUnchecked from '../../assets/images/svg.svg'; // Placeholder for unchecked
+import checkboxCircleChecked from '../../assets/images/vector_2.svg'; // Placeholder for checked (same as checkCircleIcon for now)
+import dividerSvg from '../../assets/images/divider.svg';
+import { useNavigate } from 'react-router-dom';
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 
 const DetailedPricingCard = ({ plan }) => {
+  const navigate = useNavigate();
+
   const [selectedDuration, setSelectedDuration] = useState(plan.durations[0]);
   const [sendAsGift, setSendAsGift] = useState(false);
 
@@ -19,13 +30,11 @@ const DetailedPricingCard = ({ plan }) => {
   };
 
   const handleBuyPackage = () => {
-
-    window.location.href = "/checkout";
-
+    navigate('/checkout');
   };
 
   return (
-    <div className="relative overflow-hidden bg-[rgba(251,241,255,1.00)] border border-[#bea2dcff] h-full w-full p-6 sm:p-8 rounded-3xl flex flex-col gap-6 sm:gap-8">
+    <div className="relative bg-[rgba(251,241,255,1.00)] border border-[#bea2dcff] h-full w-full p-6 sm:p-8 rounded-3xl flex flex-col gap-6 sm:gap-8">
       {/* Header */}
       <div className="flex flex-col gap-4 sm:gap-5">
         <div className="bg-brand-purple h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center p-2 rounded-2xl">
@@ -85,9 +94,9 @@ const DetailedPricingCard = ({ plan }) => {
       {/* Price and CTA */}
       <div className="mt-auto flex flex-col gap-3.5">
         <label className="flex items-center gap-2 cursor-pointer text-brand-purple-dark font-medium font-ibm-plex-sans tracking-[0.2px]">
-          <input 
-            type="checkbox" 
-            checked={sendAsGift} 
+          <input
+            type="checkbox"
+            checked={sendAsGift}
             onChange={handleGiftToggle}
             className="hidden"
           />
@@ -96,7 +105,7 @@ const DetailedPricingCard = ({ plan }) => {
           </div>
           Kirim sebagai Hadiah
         </label>
-        
+
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3.5">
           <div className="flex-1">
             <span className="text-3xl sm:text-4xl font-semibold text-brand-purple-dark font-ibm-plex-sans tracking-[0.3px]">

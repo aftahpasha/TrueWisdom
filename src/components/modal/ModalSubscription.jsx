@@ -2,7 +2,11 @@ import React, { useState } from 'react';;
 import ModalBase from './Base';;
 
 // Import icons for plans if available, or use placeholders
+<<<<<<< HEAD
 
+=======
+import trueLoveIcon from '../../../assets/images/vector_1.svg'; // Example, replace with actual icons
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 import DetailedPricingCard from '../DetailedPricingCard';
 import { useLocation } from 'react-router-dom';
 
@@ -11,7 +15,11 @@ const pricingPlansData = [
         id: 'truelove',
         title: "TrueLove",
         price: "Rp 15.000",
+<<<<<<< HEAD
         icon: '/assets/images/vector_1.svg',
+=======
+        icon: trueLoveIcon,
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
         description: "Untuk kamu yang sedang jatuh cinta, rindu, atau butuh ruang untuk mencintai diri sendiri.",
         durations: [
             { label: "7 Hari", price: "Rp 15.000" },
@@ -31,7 +39,11 @@ const pricingPlansData = [
         title: "TrueFaith",
         price: "Rp 15.000",
         // icon: trueFaithIcon, // Placeholder for actual icon path
+<<<<<<< HEAD
         icon: '/assets/images/vector_3.svg',
+=======
+        icon: '../../../assets/images/vector_3.svg', // Example, replace with actual icon
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
         description: "Untuk kamu yang mencari ketenangan spiritual dan penguatan iman dalam setiap langkah.",
         durations: [
             { label: "7 Hari", price: "Rp 15.000" },
@@ -49,7 +61,11 @@ const pricingPlansData = [
         title: "TrueAffirm",
         price: "Rp 15.000",
         // icon: trueAffirmIcon, // Placeholder for actual icon path
+<<<<<<< HEAD
         icon: '/assets/images/vector_4.svg',
+=======
+        icon: '../../../assets/images/vector_4.svg', // Example, replace with actual icon
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
         description: "Untuk kamu yang butuh afirmasi positif untuk memulai hari dengan semangat dan percaya diri.",
         durations: [
             { label: "7 Hari", price: "Rp 15.000" },

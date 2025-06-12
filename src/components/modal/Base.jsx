@@ -11,7 +11,7 @@ const ModalBase = ({ children, modal_id = 'modal_id' }) => {
                     <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                 </form>
                 {/* body content */}
-                <div className='pt-9'>
+                <div className='mt-9 overflow-y-auto max-h-[calc(100vh-180px)]'>
                     {children}
                 </div>
             </div>

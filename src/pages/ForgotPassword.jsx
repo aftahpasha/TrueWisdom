@@ -22,7 +22,7 @@ const ForgotPassword = () => {
                             type="email"
                             id="email"
                             placeholder="Masukkan email kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                         />
                     </div>

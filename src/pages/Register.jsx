@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 
+=======
+import { Link } from 'react-router-dom';
+import BackgroundRegisterImage from '../../assets/images/background_register.png';
+import Logo2Image from '../../assets/images/logo_2.png';
+import LogoGoogleImage from '../../assets/images/logo_google.png';
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 import Button from '../components/ui/Button';
 import { useState } from 'react';
 import api from '../utils/api';
@@ -46,7 +53,7 @@ const Register = () => {
                             type="text"
                             id="full_name"
                             placeholder="Masukkan nama lengkap kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                             value={fullName}
                             onChange={e => setFullName(e.target.value)}
@@ -60,7 +67,7 @@ const Register = () => {
                             type="email"
                             id="email"
                             placeholder="Masukkan email kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                             value={email}
                             onChange={e => setEmail(e.target.value)}
@@ -74,7 +81,7 @@ const Register = () => {
                             type="text"
                             id="no_telephone"
                             placeholder="Masukkan nomor telepon kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                             value={phone}
                             onChange={e => setPhone(e.target.value)}
@@ -88,7 +95,7 @@ const Register = () => {
                             type="password"
                             id="password"
                             placeholder="Masukkan kata sandi kamu"
-                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                             required
                             value={password}
                             onChange={e => setPassword(e.target.value)}
@@ -112,7 +119,7 @@ const Register = () => {
                     />
                     <span className='text-black font-normal'>Masuk dengan Google</span>
                 </Button>
-                <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Sudah punya akun? <a href='/sign-in' className='text-brand-purple font-medium'>Masuk</a></p>
+                <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Sudah punya akun? <Link to='/sign-in' className='text-brand-purple font-medium'>Masuk</Link></p>
             </form>
         </div>
     );

@@ -2,18 +2,26 @@ import React from 'react';
 import Button from './ui/Button';
 
 // Import assets for decorative elements
+<<<<<<< HEAD
 
+=======
+import unionCtaLeft from '../../assets/images/union_15.svg';
+import unionCtaRight from '../../assets/images/union_13.svg';
+import { useNavigate } from 'react-router-dom';
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 // The original design had more complex overlapping quote cards here.
 // For simplicity in refactoring, I'm using simpler decorative elements.
 // If the exact visual is needed, it would require more complex absolute positioning.
 
 const CallToActionSection = () => {
+  const navigate = useNavigate();
+
   const handleTryFree = () => {
     window.location.href = "/checkout";
   };
 
   const handleSendGift = () => {
-    window.location.href = "/checkout";
+    navigate("/checkout")
   };
 
   return (

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+import AvatarImage from '../../../assets/images/avatar.jpg';
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 import IconEdit from "../../components/icon/Edit";
 import IconRemove from "../../components/icon/Remove";
 
@@ -11,7 +15,11 @@ const SettingGeneral = () => {
                     <p className="text-sm text-brand-gray">Min 400x400px, PNG atau JPEG</p>
                 </div>
                 <div className="flex gap-4 items-center">
+<<<<<<< HEAD
                     <img src="/assets/images/avatar.jpg" alt="Avatar" className="h-14 w-14 object-cover rounded-full" />
+=======
+                    <img src={AvatarImage} alt="Avatar" className="h-14 w-14 object-cover rounded-full" />
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
                     <div className="flex items-center gap-3">
                         <button className="btn btn-outline rounded-xl border-brand-purple text-brand-purple flex gap-2 items-center">
                             <IconEdit />

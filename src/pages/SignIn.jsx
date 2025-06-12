@@ -1,9 +1,18 @@
+<<<<<<< HEAD
+=======
+import SignInQuotesImage from '../../assets/images/signin_quotes.png';
+import LogoImage from '../../assets/images/logo.png';
+import LogoGoogleImage from '../../assets/images/logo_google.png';
+import Button from '../components/ui/Button';
+import { Link, useNavigate } from 'react-router-dom';
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 
 
 import { useState } from 'react';
 import api from '../utils/api';
 import Button from '../components/ui/Button';
 const SignIn = () => {
+<<<<<<< HEAD
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -34,6 +43,13 @@ const SignIn = () => {
         } finally {
             setLoading(false);
         }
+=======
+    const navigate = useNavigate();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        navigate('/checkout');
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
     }
 
     return (
@@ -46,7 +62,7 @@ const SignIn = () => {
                         className="object-cover pointer-events-none h-full w-full max-w-[3.75rem] max-h-[3.75rem] mb-4"
                     />
                     <h2 className='font-semibold text-[2rem] leading-[2.5rem] mb-2 text-center'>Selamat Datang Kembali!</h2>
-                    <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <a href='/register' className='text-brand-purple font-medium'>Daftar</a></p>
+                    <p className='text-[1.25rem] leading-[1.75rem] text-brand-gray mb-6'>Belum punya akun? <Link to='/register' className='text-brand-purple font-medium'>Daftar</Link></p>
                     <form onSubmit={handleSubmit} className='w-full'>
                         <div className='mb-4'>
                             <label htmlFor="email" className="block text-sm font-medium text-brand-purple-dark mb-1.5">
@@ -56,7 +72,7 @@ const SignIn = () => {
                                 type="email"
                                 id="email"
                                 placeholder="Masukkan email kamu"
-                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                 required
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
@@ -70,16 +86,22 @@ const SignIn = () => {
                                 type="password"
                                 id="password"
                                 placeholder="Masukkan kata sandi kamu"
-                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
+                                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray disabled:bg-gray-200 disabled:cursor-not-allowed"
                                 required
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
                             />
                         </div>
+<<<<<<< HEAD
                         <a href='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</a>
                         {error && <div className="text-red-500 text-sm mb-2 text-center">{error}</div>}
                         <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal" disabled={loading}>
                             <span className='font-normal'>{loading ? 'Memproses...' : 'Masuk'}</span>
+=======
+                        <Link to='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</Link>
+                        <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal">
+                            <span className='font-normal'>Masuk</span>
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
                         </Button>
                         <div className='flex flex-row justify-center items-center gap-6 mb-4'>
                             <hr className='flex-grow' />

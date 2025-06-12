@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
+<<<<<<< HEAD
 import Button from './ui/Button';
+=======
+// Import assets
+import unionSvg from '../../assets/images/union_18.svg';
+import trueWisdomSvg from '../../assets/images/truewisdom_17.svg';
+import { useNavigate } from 'react-router-dom';
+>>>>>>> f4dd6877a5ed1f40b47e9351c411c990308f8429
 
-const NavLink = ({ href, children }) => (
-  <a
-    href={href}
-    className="text-brand-purple-dark hover:text-brand-purple font-medium transition-colors duration-300"
-    onClick={(e) => {
-      e.preventDefault();
-      window.location.href = href;
-    }}
-  >
-    {children}
-  </a>
-);
+const NavLink = ({ href, children }) => {
+  const navigate = useNavigate();
+
+  return (
+    <a
+      href={href}
+      className="text-brand-purple-dark hover:text-brand-purple font-medium transition-colors duration-300"
+      onClick={(e) => {
+        e.preventDefault();
+        navigate(href);
+      }}
+    >
+      {children}
+    </a>
+  )
+};
 
 const Navbar = ({ authenticated = false }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   // Add scroll event listener
   useEffect(() => {
@@ -44,9 +56,9 @@ const Navbar = ({ authenticated = false }) => {
 
   const handleAuthAction = (action) => {
     if (action == 'Masuk') {
-      window.location.href = '/sign-in';
+      navigate('/sign-in');
     } else {
-      window.location.href = '/register';
+      navigate('/register');
     }
     // Add actual authentication logic here
   };
