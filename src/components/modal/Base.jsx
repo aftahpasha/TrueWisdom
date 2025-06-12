@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../ui/Button';
-import CheckImage from '../../../assets/images/icon_check.png';
+
 
 const ModalBase = ({ children, modal_id = 'modal_id' }) => {
     return (

@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import CheckPrimarySVG from '../../assets/images/check_primary.svg';
-import CheckSuccessSVG from '../../assets/images/check_success.svg';
-import XCircleBlackSVG from '../../assets/images/x_circle_black.svg';
-import ArrowRightWhiteSVG from '../../assets/images/arrow_right_white.svg';
-import ChevronRightGraySVG from '../../assets/images/chevron_right_gray.svg';
-import LocationPrimarySVG from '../../assets/images/location_primary.svg';
+
 import Button from "../components/ui/Button";
 import ModalMyAddress from "../components/modal/ModalMyAddress";
 import ModalNewAddress from "../components/modal/ModalNewAddress";
@@ -39,14 +34,14 @@ const Checkout = () => {
                                 <div className="flex justify-between items-center">
                                     <h4 className="font-semibold text-xl leading-6">Alamat Pengiriman</h4>
                                     <button className="btn btn-ghost btn-sm" onClick={() => modal_my_address.showModal()}>
-                                        <img src={ChevronRightGraySVG} alt="Arrow Icon" className="object-contain" />
+                                        <img src="/assets/images/chevron_right_gray.svg" alt="Arrow Icon" className="object-contain" />
                                     </button>
                                     <ModalMyAddress />
                                     <ModalNewAddress />
                                 </div>
                                 <hr className="my-3" />
                                 <div className="flex gap-4 items-start">
-                                    <img src={LocationPrimarySVG} alt="Arrow Icon" className="object-contain pt-2" />
+                                    <img src="/assets/images/location_primary.svg" alt="Arrow Icon" className="object-contain pt-2" />
                                     <div className="flex flex-col gap-2">
                                         <p className="font-semibold text-lg">Caroline,</p>
                                         <p className="text-brand-purple text-lg">6289746172218,</p>
@@ -67,25 +62,25 @@ const Checkout = () => {
                                         Berikut adalah fitur-fitur yang akan Anda dapatkan :
                                     </p>
                                     <div className="flex items-center gap-3">
-                                        <img src={CheckPrimarySVG} alt="Check Icon" className="object-contain" />
+                                        <img src="/assets/images/check_primary.svg" alt="Check Icon" className="object-contain" />
                                         <p className="text-brand-purple leading-5">
                                             Quote harian bertema cinta yang hangat dan dewasa
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <img src={CheckPrimarySVG} alt="Check Icon" className="object-contain" />
+                                        <img src="/assets/images/check_primary.svg" alt="Check Icon" className="object-contain" />
                                         <p className="text-brand-purple leading-5">
                                             Cocok untuk healing dari patah hati, memperdalam relasi, atau merayakan cinta
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <img src={CheckPrimarySVG} alt="Check Icon" className="object-contain" />
+                                        <img src="/assets/images/check_primary.svg" alt="Check Icon" className="object-contain" />
                                         <p className="text-brand-purple leading-5">
                                             Dikirim setiap hari via email, selama 7 hari
                                         </p>
                                     </div>
                                     <div className="flex items-center gap-3">
-                                        <img src={CheckPrimarySVG} alt="Check Icon" className="object-contain" />
+                                        <img src="/assets/images/check_primary.svg" alt="Check Icon" className="object-contain" />
                                         <p className="text-brand-purple leading-5">
                                             Sudah Termasuk photocard yang dicetak
                                         </p>
@@ -113,7 +108,7 @@ const Checkout = () => {
                                         {selectedPromo != null &&
                                             <div className="absolute top-1/2 right-6 -translate-y-1/2 translate-x-1/2">
                                                 <button className="btn btn-link">
-                                                    <img src={XCircleBlackSVG} alt="X Icon" className="object-contain" onClick={removeSelectedPromo} />
+                                                    <img src="/assets/images/x_circle_black.svg" alt="X Icon" className="object-contain" onClick={removeSelectedPromo} />
                                                 </button>
                                             </div>
                                         }
@@ -124,7 +119,7 @@ const Checkout = () => {
                                 </div>
                                 {selectedPromo != null &&
                                     <div className="flex gap-2 items-center mt-4">
-                                        <img src={CheckSuccessSVG} alt="Check Icon" className="object-contain h-5 w-5" />
+                                        <img src="/assets/images/check_success.svg" alt="Check Icon" className="object-contain h-5 w-5" />
                                         <p className="text-success font-medium text-sm">1 Voucher telah berhasil diterapkan</p>
                                     </div>
                                 }
@@ -199,7 +194,7 @@ const Checkout = () => {
                                 </div>
                                 <Button type="submit" variant="primary" size="md" className="w-full rounded-xl flex gap-3 justify-center items-center">
                                     <span className='font-medium'>Bayar Sekarang</span>
-                                    <img src={ArrowRightWhiteSVG} alt="Arrow Right Icon" className="object-contain" />
+                                    <img src="/assets/images/arrow_right_white.svg" alt="Arrow Right Icon" className="object-contain" />
                                 </Button>
                             </div>
                         </div>

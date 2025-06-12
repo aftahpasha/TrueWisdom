@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import AvatarImage from '../../assets/images/avatar.jpg';
-import DashboardPrimarySVG from '../../assets/images/dashboard_primary.svg';
-import LogoutErrorSVG from '../../assets/images/logout_error.svg';
-import Button from './ui/Button';
-import ArrowDownPrimarySVG from '../../assets/images/arrow_down_primary.svg';
 
-// Import assets
-import unionSvg from '../../assets/images/union_18.svg';
-import trueWisdomSvg from '../../assets/images/truewisdom_17.svg';
+import Button from './ui/Button';
 
 const NavLink = ({ href, children }) => (
   <a
@@ -73,8 +66,8 @@ const Navbar = ({ authenticated = false }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-20 h-[76px] flex justify-between items-center">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5" onClick={(e) => e.preventDefault()}>
-          <img src={unionSvg} alt="TrueWisdom Logo Icon" className="h-8 w-8" />
-          <img src={trueWisdomSvg} alt="TrueWisdom Logo Text" className="h-5" />
+          <img src="/assets/images/union_18.svg" alt="TrueWisdom Logo Icon" className="h-8 w-8" />
+          <img src="/assets/images/truewisdom_17.svg" alt="TrueWisdom Logo Text" className="h-5" />
         </a>
 
         {/* Desktop Navigation Links */}
@@ -88,20 +81,20 @@ const Navbar = ({ authenticated = false }) => {
           /* Profile Buttons - Desktop */
           <div className="hidden lg:block dropdown dropdown-hover">
             <Button type="button" variant="outline" size="sm" className="w-full rounded-full bg-white flex justify-center items-center">
-              <img src={AvatarImage} alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
+              <img src="/assets/images/avatar.jpg" alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
               <span className='font-medium text-lg mr-4'>Stephen</span>
-              <img src={ArrowDownPrimarySVG} alt="Arrow Down" className="object-contain" />
+              <img src="/assets/images/arrow_down_primary.svg" alt="Arrow Down" className="object-contain" />
             </Button>
             <ul tabIndex="0" className="dropdown-content menu rounded-lg shadow bg-white">
               <li>
                 <a className='text-brand-purple flex items-center gap-2'>
-                  <img src={DashboardPrimarySVG} alt="Arrow Down" className="object-contain" />
+                <img src="/assets/images/dashboard_primary.svg" alt="Arrow Down" className="object-contain" />
                   <p className='font-medium text-lg'>Dashboard</p>
                 </a>
               </li>
               <li>
                 <a className='text-error flex items-center gap-2'>
-                  <img src={LogoutErrorSVG} alt="Arrow Down" className="object-contain" />
+                <img src="/assets/images/logout_error.svg" alt="Arrow Down" className="object-contain" />
                   <p className='font-medium text-lg'>Keluar</p>
                 </a>
               </li>
@@ -145,20 +138,20 @@ const Navbar = ({ authenticated = false }) => {
                   <div>
                     <div className="dropdown dropdown-hover">
                       <Button type="button" variant="outline" size="sm" className="w-full rounded-full bg-white flex justify-center items-center">
-                        <img src={AvatarImage} alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
-                        <span className='font-medium text-lg mr-4'>Stephen</span>
-                        <img src={ArrowDownPrimarySVG} alt="Arrow Down" className="object-contain" />
+              <img src="/assets/images/avatar.jpg" alt="Avatar" className="h-10 w-10 object-cover rounded-full mr-2" />
+              <span className='font-medium text-lg mr-4'>Stephen</span>
+              <img src="/assets/images/arrow_down_primary.svg" alt="Arrow Down" className="object-contain" />
                       </Button>
                       <ul tabIndex="0" className="dropdown-content menu rounded-lg shadow bg-white">
                         <li>
                           <a className='text-brand-purple flex items-center gap-2'>
-                            <img src={DashboardPrimarySVG} alt="Arrow Down" className="object-contain" />
+                <img src="/assets/images/dashboard_primary.svg" alt="Arrow Down" className="object-contain" />
                             <p className='font-medium text-lg'>Dashboard</p>
                           </a>
                         </li>
                         <li>
                           <a className='text-error flex items-center gap-2'>
-                            <img src={LogoutErrorSVG} alt="Arrow Down" className="object-contain" />
+                <img src="/assets/images/logout_error.svg" alt="Arrow Down" className="object-contain" />
                             <p className='font-medium text-lg'>Keluar</p>
                           </a>
                         </li>

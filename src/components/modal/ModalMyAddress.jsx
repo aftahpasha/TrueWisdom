@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../ui/Button';
-import EditGraySVG from '../../../assets/images/edit_gray.svg';
-import PlusWhiteSVG from '../../../assets/images/+_white.svg';
+
 import ModalBase from './Base';
 
 const ModalMyAddress = () => {
@@ -44,7 +43,7 @@ const ModalMyAddress = () => {
                         </div>
                     </div>
                     <button className='btn btn-ghost btn-sm'>
-                        <img src={EditGraySVG} alt="Icon Edit" className='object-contain' onClick={editAddress} />
+                        <img src="/assets/images/edit_gray.svg" alt="Icon Edit" className='object-contain' onClick={editAddress} />
                     </button>
                 </div>
                 <div className="flex gap-4 items-start p-3 border border-gray-300 rounded-xl w-full">

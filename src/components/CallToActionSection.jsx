@@ -2,8 +2,7 @@ import React from 'react';
 import Button from './ui/Button';
 
 // Import assets for decorative elements
-import unionCtaLeft from '../../assets/images/union_15.svg';
-import unionCtaRight from '../../assets/images/union_13.svg';
+
 // The original design had more complex overlapping quote cards here.
 // For simplicity in refactoring, I'm using simpler decorative elements.
 // If the exact visual is needed, it would require more complex absolute positioning.
@@ -23,12 +22,12 @@ const CallToActionSection = () => {
         <div className="relative overflow-hidden bg-brand-purple-dark p-10 sm:p-14 md:py-20 rounded-3xl text-center">
           {/* Decorative elements (simplified) */}
           <img
-            src={unionCtaLeft}
+            src="/assets/images/union_15.svg"
             alt=""
             className="absolute left-0 top-0 h-full w-auto object-contain pointer-events-none"
           />
           <img
-            src={unionCtaRight}
+            src="/assets/images/union_13.svg"
             alt=""
             className="absolute right-0 top-0 h-full w-auto object-contain pointer-events-none"
           />

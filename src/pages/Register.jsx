@@ -1,13 +1,39 @@
-import BackgroundRegisterImage from '../../assets/images/background_register.png';
-import Logo2Image from '../../assets/images/logo_2.png';
-import LogoGoogleImage from '../../assets/images/logo_google.png';
+
 import Button from '../components/ui/Button';
+import { useState } from 'react';
+import api from '../utils/api';
 
 const Register = () => {
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setError('');
+        setLoading(true);
+        try {
+            await api.post('/accounts/signup', {
+                name: fullName,
+                email,
+                phone,
+                password
+            });
+            window.location.href = '/sign-in';
+        } catch (err) {
+            setError('Registrasi gagal. Silakan cek data Anda.');
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
-        <div className="flex flex-col p-8 justify-center items-center min-h-screen font-ibm-plex-sans bg-no-repeat bg-[length:100%_auto] md:bg-[length:100%_100%]" style={{ backgroundImage: `url(${BackgroundRegisterImage})` }}>
-            <img src={Logo2Image} alt='Logo 2' className='h-10 object-contain mb-4 md:mb-7' />
-            <form className='flex flex-col justify-center items-center p-6 md:p-10 bg-white rounded-xl max-w-[33.75rem]'>
+        <div className="flex flex-col p-8 justify-center items-center min-h-screen font-ibm-plex-sans bg-no-repeat bg-[length:100%_auto] md:bg-[length:100%_100%]" style={{ backgroundImage: `url(/assets/images/background_register.png)` }}>
+            <img src="/assets/images/logo_2.png" alt='Logo 2' className='h-10 object-contain mb-4 md:mb-7' />
+            <form onSubmit={handleSubmit} className='flex flex-col justify-center items-center p-6 md:p-10 bg-white rounded-xl max-w-[33.75rem]'>
                 <h2 className='font-semibold text-[1.75rem] leading-[2.5rem] text-center text-black mb-4 md:mb-7'>
                     Mulai <span className='underline italic'>Perjalananmu</span> Menuju Hari yang Lebih <span className='underline italic'>Bermakna</span>
                 </h2>
@@ -22,6 +48,8 @@ const Register = () => {
                             placeholder="Masukkan nama lengkap kamu"
                             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
                             required
+                            value={fullName}
+                            onChange={e => setFullName(e.target.value)}
                         />
                     </div>
                     <div>
@@ -34,6 +62,8 @@ const Register = () => {
                             placeholder="Masukkan email kamu"
                             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
                             required
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
                         />
                     </div>
                     <div>
@@ -46,6 +76,8 @@ const Register = () => {
                             placeholder="Masukkan nomor telepon kamu"
                             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
                             required
+                            value={phone}
+                            onChange={e => setPhone(e.target.value)}
                         />
                     </div>
                     <div>
@@ -58,11 +90,14 @@ const Register = () => {
                             placeholder="Masukkan kata sandi kamu"
                             className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
                             required
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
                         />
                     </div>
                 </div>
-                <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal">
-                    <span className='font-normal'>Masuk</span>
+                {error && <div className="text-red-500 text-sm mb-2 text-center">{error}</div>}
+                <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal" disabled={loading}>
+                    <span className='font-normal'>{loading ? 'Memproses...' : 'Daftar'}</span>
                 </Button>
                 <div className='flex flex-row justify-center items-center gap-6 mb-4'>
                     <hr className='flex-grow' />
@@ -71,7 +106,7 @@ const Register = () => {
                 </div>
                 <Button type="button" variant="outline" size="md" className="w-full rounded-xl border-black flex justify-center items-center gap-2 mb-7">
                     <img
-                        src={LogoGoogleImage}
+                        src="/assets/images/logo_google.png"
                         alt="Logo Google"
                         className="object-contain pointer-events-none w-5 h-5"
                     />

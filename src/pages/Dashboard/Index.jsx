@@ -1,11 +1,8 @@
 import React from "react";
+import ModalFeelToday from "../../components/modal/ModalFeelToday";
+import ModalFeelTodaySent from "../../components/modal/ModalFeelTodaySent";
 import DashboardLayout from "../../layouts/dashboard";
-import SharePrimarySVG from '../../../assets/images/share_primary.svg';
-import DownloadHoneyYellowSVG from '../../../assets/images/download_honey_yellow.svg';
-import SendHoneyYellowSVG from '../../../assets/images/send_honey_yellow.svg';
-import SearchBlackSVG from '../../../assets/images/search_black.svg';
-import GridBlackSVG from '../../../assets/images/grid_black.svg';
-import MenuBlackSVG from '../../../assets/images/menu_black.svg';
+
 
 const Dashboard = () => {
     return (
@@ -23,15 +20,23 @@ const Dashboard = () => {
                         </p>
                         <hr className="my-5" />
                         <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
-                            <button className="btn btn-link text-brand-purple-dark">
+                            <button
+                                className="btn btn-link text-brand-purple-dark"
+                                type="button"
+                                onClick={() => {
+                                    if (typeof window !== 'undefined' && window.modal_feel_today) {
+                                        window.modal_feel_today.showModal();
+                                    }
+                                }}
+                            >
                                 Bagaimana perasaanmu hari ini?
                             </button>
                             <div className="flex items-center gap-3">
                                 <button className="btn btn-ghost btn-sm">
-                                    <img src={SharePrimarySVG} alt="Icon Share" className="object-contain" />
+                                    <img src="/assets/images/share_primary.svg" alt="Icon Share" className="object-contain" />
                                 </button>
                                 <button className="hover:bg-brand-honey-yellow/80 bg-brand-honey-yellow rounded-full px-5 py-3 font-semibold flex gap-2 text-brand-honey-yellow-dark">
-                                    <img src={DownloadHoneyYellowSVG} alt="Icon Download" className="object-contain" />
+                                    <img src="/assets/images/download_honey_yellow.svg" alt="Icon Download" className="object-contain" />
                                     <span>Unduh Photocard</span>
                                 </button>
                             </div>
@@ -58,7 +63,7 @@ const Dashboard = () => {
                             Kirimkan <span className="italic">Quotes</span> ke Orang Tersayang Kamu
                         </p>
                         <div className="h-10 w-10 rounded-full flex justify-center items-center bg-brand-honey-yellow flex-shrink-0">
-                            <img src={SendHoneyYellowSVG} alt="Icon Send" className="object-contain" />
+                            <img src="/assets/images/send_honey_yellow.svg" alt="Icon Send" className="object-contain" />
                         </div>
                     </div>
                 </div>
@@ -68,18 +73,18 @@ const Dashboard = () => {
                 <div className="flex gap-6 items-center">
                     <div className="flex items-center gap-4">
                         <button className="btn btn-ghost btn-sm">
-                            <img src={GridBlackSVG} alt="Icon Grid" className="object-contain" />
+                            <img src="/assets/images/grid_black.svg" alt="Icon Grid" className="object-contain" />
                         </button>
                         <button className="btn btn-ghost btn-sm">
-                            <img src={MenuBlackSVG} alt="Icon Menu" className="object-contain" />
+                            <img src="/assets/images/menu_black.svg" alt="Icon Menu" className="object-contain" />
                         </button>
                     </div>
                     <div className='h-6 w-1 border-l-2 border-gray-300'></div>
                     <div className="flex gap-2 lg:w-[20.875rem] p-3 border border-gray-300 rounded-lg">
-                        <img src={SearchBlackSVG} alt="Icon Search" className="object-contain" />
+                        <img src="/assets/images/search_black.svg" alt="Icon Search" className="object-contain" />
                         <input
-                            type="password"
-                            id="password"
+                            type="text"
+                            id="search"
                             placeholder="Cari di sini"
                             className="w-full focus-visible:outline-none"
                             required
@@ -88,8 +93,8 @@ const Dashboard = () => {
                 </div>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                {Array(6).fill(null).map(() =>
-                    <div className="px-8 pt-8 pb-5 bg-[#FBF1FF] rounded-lg">
+                {Array(6).fill(null).map((_, idx) =>
+                    <div key={idx} className="px-8 pt-8 pb-5 bg-[#FBF1FF] rounded-lg">
                         <div className="flex justify-between items-center text-brand-purple-dark mb-5">
                             <p>Quote</p>
                             <p>5 April 2025</p>
@@ -100,16 +105,18 @@ const Dashboard = () => {
                         <hr className="mb-5" />
                         <div className="flex justify-end items-center gap-4">
                             <button className="btn btn-ghost btn-sm">
-                                <img src={SharePrimarySVG} alt="Icon Share" className="object-contain" />
+                                <img src="/assets/images/share_primary.svg" alt="Icon Share" className="object-contain" />
                             </button>
                             <button className="hover:bg-brand-honey-yellow/80 bg-brand-honey-yellow rounded-full px-5 py-3 font-semibold flex gap-2 text-brand-honey-yellow-dark">
-                                <img src={DownloadHoneyYellowSVG} alt="Icon Download" className="object-contain" />
+                                <img src="/assets/images/download_honey_yellow.svg" alt="Icon Download" className="object-contain" />
                                 <span>Unduh Photocard</span>
                             </button>
                         </div>
                     </div>
                 )}
             </div>
+            <ModalFeelToday />
+            <ModalFeelTodaySent />
         </DashboardLayout>
     );
 };

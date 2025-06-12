@@ -3,10 +3,7 @@ import HeroForm from './HeroForm';
 import QuoteCarousel from './QuoteCarousel';
 import QuoteCard from './QuoteCard'; // For the static, rotated cards
 
-import ellipse3Svg from '../../assets/images/ellipse_3.svg';
-import ellipse4Svg from '../../assets/images/ellipse_4.svg';
-import trueWisdomMainLogoUnion from '../../assets/images/union_9.svg';
-import trueWisdomMainLogo from '../../assets/images/truewisdom_9.svg';
+
 
 const HeroSection = () => {
   const handleBadgeClick = () => {
@@ -29,8 +26,8 @@ const HeroSection = () => {
             >
               <div className="relative bg-white border h-[18px] w-auto flex items-center gap-1 px-3 py-1 rounded-full border-[#f8b35bff] border-solid">
                 <div className="relative bg-[rgba(254,244,231,1.00)] rounded h-[6px] w-[6px]">
-                  <img src={ellipse3Svg} alt="" className="absolute inset-0 h-full w-full" />
-                  <img src={ellipse4Svg} alt="" className="absolute h-[4px] w-[4px] left-[1px] top-[1px]" />
+                  <img src="/assets/images/ellipse_3.svg" alt="" className="absolute inset-0 h-full w-full" />
+                  <img src="/assets/images/ellipse_4.svg" alt="" className="absolute h-[4px] w-[4px] left-[1px] top-[1px]" />
                 </div>
                 <span className="text-[14px] font-medium leading-[20px] tracking-[0.2px] text-[rgba(147,85,6,1.00)] font-ibm-plex-sans">
                   TrueWisdom
@@ -57,8 +54,8 @@ const HeroSection = () => {
       
       <div className="relative z-10 text-center pt-12 pb-10">
         <div className="inline-flex items-center gap-2.5 mb-12">
-          <img src={trueWisdomMainLogoUnion} alt="TrueWisdom Logo Icon" className="h-8 w-8" />
-          <img src={trueWisdomMainLogo} alt="TrueWisdom Logo Text" className="h-5" />
+          <img src="/assets/images/union_9.svg" alt="TrueWisdom Logo Icon" className="h-8 w-8" />
+          <img src="/assets/images/truewisdom_9.svg" alt="TrueWisdom Logo Text" className="h-5" />
         </div>
         <h2 className="text-[32px] sm:text-[36px] font-medium leading-[1.1] tracking-[-1px] text-brand-purple-dark font-ibm-plex-serif">
           <i className="italic underline">Quotes</i> yang Datang Saat Kamu Membutuhkannya

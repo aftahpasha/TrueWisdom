@@ -5,7 +5,7 @@ const FeatureCard = ({ imgSrc, title, description, bgColor = 'bg-[rgba(242,236,2
     <div className={`relative overflow-hidden ${bgColor} h-full flex flex-col items-center gap-8 pt-5 pb-8 px-5 rounded-3xl`}>
       <div 
         className="relative overflow-hidden h-[242px] w-full rounded-3xl bg-cover bg-center"
-        style={{ backgroundImage: `url(${imgSrc})` }}
+        style={{ backgroundImage: `url(${imgSrc.startsWith('/') ? imgSrc : '/assets/images/' + imgSrc})` }}
       >
         {/* Image is set as background */}
       </div>

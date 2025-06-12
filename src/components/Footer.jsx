@@ -1,11 +1,7 @@
 import React from 'react';
 
 // Import assets
-import footerLogoUnion from '../../assets/images/union_17.svg';
-import footerLogoText from '../../assets/images/truewisdom_15.svg';
-// The very bottom logo (I4118_7892_4013_1038__TrueWisdom) seems to be a larger version or different style.
-// Using the one from the main footer block for consistency.
-import trueWisdomLargeFooter from '../../assets/images/truewisdom_16.svg';
+
 
 const FooterLink = ({ href, children }) => (
   <a
@@ -28,8 +24,8 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-20 text-center">
         {/* Logo */}
         <a href="#" onClick={handleLogoClick} className="inline-flex items-center gap-2.5 mb-8 sm:mb-10">
-          <img src={footerLogoUnion} alt="TrueWisdom Logo Icon" className="h-8 w-8" />
-          <img src={footerLogoText} alt="TrueWisdom Logo Text" className="h-5" />
+          <img src="/assets/images/union_17.svg" alt="TrueWisdom Logo Icon" className="h-8 w-8" />
+          <img src="/assets/images/truewisdom_15.svg" alt="TrueWisdom Logo Text" className="h-5" />
         </a>
 
         {/* Navigation Links */}
@@ -49,7 +45,7 @@ const Footer = () => {
         </div>
         
         {/* Optional: Larger decorative logo at the very bottom if desired */}
-          <img src={trueWisdomLargeFooter} alt="TrueWisdom" className="mx-auto mt-10" />
+          <img src="/assets/images/truewisdom_16.svg" alt="TrueWisdom" className="mx-auto mt-10" />
       </div>
     </footer>
   );

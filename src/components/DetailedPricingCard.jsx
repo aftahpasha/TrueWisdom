@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import Button from './ui/Button';
 
 // Import assets
-import handHeartIcon from '../../assets/images/vector_1.svg';
-import checkCircleIcon from '../../assets/images/vector_2.svg'; // Assuming this is the check icon
-import checkboxCircleUnchecked from '../../assets/images/svg.svg'; // Placeholder for unchecked
-import checkboxCircleChecked from '../../assets/images/vector_2.svg'; // Placeholder for checked (same as checkCircleIcon for now)
-import dividerSvg from '../../assets/images/divider.svg';
+
 
 const DetailedPricingCard = ({ plan }) => {
   const [selectedDuration, setSelectedDuration] = useState(plan.durations[0]);
@@ -33,7 +29,7 @@ const DetailedPricingCard = ({ plan }) => {
       {/* Header */}
       <div className="flex flex-col gap-4 sm:gap-5">
         <div className="bg-brand-purple h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center p-2 rounded-2xl">
-          <img src={plan.icon || handHeartIcon} alt={`${plan.title} icon`} className="h-full w-full object-contain" />
+          <img src={plan.icon || '/assets/images/vector_1.svg'} alt={`${plan.title} icon`} className="h-full w-full object-contain" />
         </div>
         <div>
           <h3 className="text-3xl sm:text-4xl font-semibold italic text-brand-purple-dark font-ibm-plex-serif tracking-[0.3px]">
@@ -75,7 +71,7 @@ const DetailedPricingCard = ({ plan }) => {
         <ul className="space-y-3 sm:space-y-4">
           {plan.features.map((feature, index) => (
             <li key={index} className="flex items-start gap-2.5">
-              <img src={checkCircleIcon} alt="Checkmark" className="h-5 w-5 sm:h-6 sm:w-6 mt-0.5 text-brand-purple" />
+              <img src="/assets/images/vector_2.svg" alt="Checkmark" className="h-5 w-5 sm:h-6 sm:w-6 mt-0.5 text-brand-purple" />
               <span className="text-sm sm:text-base text-brand-purple-dark font-ibm-plex-sans flex-1">
                 {feature}
               </span>
@@ -84,7 +80,7 @@ const DetailedPricingCard = ({ plan }) => {
         </ul>
       </div>
 
-      <img src={dividerSvg} alt="Divider" className="w-full" />
+      <img src="/assets/images/divider.svg" alt="Divider" className="w-full" />
 
       {/* Price and CTA */}
       <div className="mt-auto flex flex-col gap-3.5">

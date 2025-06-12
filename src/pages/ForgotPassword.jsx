@@ -1,15 +1,13 @@
-import BackgroundForgotPasswordImage from '../../assets/images/background_forgot_password.png';
-import Logo2WhiteImage from '../../assets/images/logo_2_white.png';
-import KeyLineSVG from '../../assets/images/key_line.svg';
+
 import Button from '../components/ui/Button';
 
 const ForgotPassword = () => {
     return (
-        <div className="relative flex flex-col justify-center items-center p-8 min-h-screen font-ibm-plex-sans bg-no-repeat bg-[length:100%_auto] md:bg-[length:100%_100%] bg-brand-purple-dark" style={{ backgroundImage: `url(${BackgroundForgotPasswordImage})` }}>
-            <img src={Logo2WhiteImage} alt='Logo 2' className='absolute top-12 left-1/2 -translate-x-1/2 h-10 object-contain mb-4 md:mb-7' />
+        <div className="relative flex flex-col justify-center items-center p-8 min-h-screen font-ibm-plex-sans bg-no-repeat bg-[length:100%_auto] md:bg-[length:100%_100%] bg-brand-purple-dark" style={{ backgroundImage: `url(/assets/images/background_forgot_password.png)` }}>
+            <img src="/assets/images/logo_2_white.png" alt='Logo 2' className='absolute top-12 left-1/2 -translate-x-1/2 h-10 object-contain mb-4 md:mb-7' />
             <form className='flex flex-col justify-center items-center p-6 md:p-10 bg-white rounded-xl max-w-[33.75rem] mt-20'>
                 <div className='bg-brand-purple p-3 rounded-xl h-14 w-14 flex justify-center items-center mb-7'>
-                    <img src={KeyLineSVG} alt="Key" />
+                    <img src="/assets/images/key_line.svg" alt="Key" />
                 </div>
                 <h2 className='font-semibold text-[1.75rem] leading-[2.5rem] text-center text-black'>
                     Lupa Kata Sandi?

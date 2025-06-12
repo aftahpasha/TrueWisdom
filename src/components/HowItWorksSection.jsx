@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Import assets
-import chatGptImage from '../../assets/images/chatgpt_image_may_1_2025_09_57_50_am_1.png';
+
 
 const steps = [
   {
@@ -30,7 +30,7 @@ const HowItWorksSection = () => {
             <div className="lg:w-2/5 xl:w-1/2">
               <div className="relative overflow-hidden bg-brand-orange-dark h-[400px] sm:h-[500px] lg:h-[600px] w-full rounded-3xl">
                 <img
-                    src={chatGptImage}
+                    src="/assets/images/chatgpt_image_may_1_2025_09_57_50_am_1.png"
                     alt="Abstract representation of AI and creativity"
                     className="absolute inset-0 w-full h-full object-cover"
                 />

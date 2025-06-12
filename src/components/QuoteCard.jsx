@@ -1,6 +1,5 @@
 import React from 'react';
-import defaultUnionSvg from '../../assets/images/union.svg';
-import defaultTrueWisdomSvg from '../../assets/images/truewisdom.svg';
+
 
 const QuoteCard = ({
                        bgColor = 'bg-[rgba(251,241,197,1.00)]',
@@ -8,8 +7,8 @@ const QuoteCard = ({
                        gradientClasses = '',
                        textColor = 'text-[rgba(100,59,3,1.00)]',
                        text,
-                       logoUnionSvg = defaultUnionSvg,
-                       logoTrueWisdomSvg = defaultTrueWisdomSvg,
+                       logoUnionSvg = '/assets/images/union.svg',
+                       logoTrueWisdomSvg = '/assets/images/truewisdom.svg',
                        className = '',
                        textStyle = {}
                    }) => {

@@ -1,12 +1,39 @@
-import SignInQuotesImage from '../../assets/images/signin_quotes.png';
-import LogoImage from '../../assets/images/logo.png';
-import LogoGoogleImage from '../../assets/images/logo_google.png';
-import Button from '../components/ui/Button';
 
+
+import { useState } from 'react';
+import api from '../utils/api';
+import Button from '../components/ui/Button';
 const SignIn = () => {
-    const handleSubmit = (e) => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        window.location.href = '/dashboard';
+        setError('');
+        setLoading(true);
+        try {
+            const response = await api.post('/accounts/signin', {
+                email,
+                password
+            });
+            // Save token/user info as needed
+            if (response.data.data && response.data.data.token) {
+                localStorage.setItem('token', response.data.data.token);
+                localStorage.setItem('user', JSON.stringify(response.data.data.user));
+                window.location.href = '/dashboard';
+            } else {
+                setError('Login gagal. Silakan cek email dan password Anda.');
+                console.error('Login response error:', response.data);
+            }
+        } catch (err) {
+            setError('Login gagal. Silakan cek email dan password Anda.');
+            console.error('Login error:', err);
+        } finally {
+            setLoading(false);
+        }
     }
 
     return (
@@ -14,7 +41,7 @@ const SignIn = () => {
             <div className='md:w-1/2 flex flex-col justify-center items-center'>
                 <div className='flex flex-col justify-center items-center max-w-[30rem] p-4'>
                     <img
-                        src={LogoImage}
+                        src="/assets/images/logo.png"
                         alt="Logo"
                         className="object-cover pointer-events-none h-full w-full max-w-[3.75rem] max-h-[3.75rem] mb-4"
                     />
@@ -31,6 +58,8 @@ const SignIn = () => {
                                 placeholder="Masukkan email kamu"
                                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
                                 required
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
                             />
                         </div>
                         <div className='mb-3'>
@@ -43,11 +72,14 @@ const SignIn = () => {
                                 placeholder="Masukkan kata sandi kamu"
                                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-brand-purple focus:border-brand-purple text-sm placeholder-brand-gray"
                                 required
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
                             />
                         </div>
                         <a href='/forgot-password' className='text-sm font-medium float-right mb-3'>Lupa Kata Sandi?</a>
-                        <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal">
-                            <span className='font-normal'>Masuk</span>
+                        {error && <div className="text-red-500 text-sm mb-2 text-center">{error}</div>}
+                        <Button type="submit" variant="primary" size="md" className="w-full rounded-xl mb-4 font-normal" disabled={loading}>
+                            <span className='font-normal'>{loading ? 'Memproses...' : 'Masuk'}</span>
                         </Button>
                         <div className='flex flex-row justify-center items-center gap-6 mb-4'>
                             <hr className='flex-grow' />
@@ -56,7 +88,7 @@ const SignIn = () => {
                         </div>
                         <Button type="button" variant="outline" size="md" className="w-full rounded-xl border-black flex justify-center items-center gap-2">
                             <img
-                                src={LogoGoogleImage}
+                                src="/assets/images/logo_google.png"
                                 alt="Logo Google"
                                 className="object-contain pointer-events-none w-5 h-5"
                             />
@@ -67,7 +99,7 @@ const SignIn = () => {
             </div>
             <div className='md:w-1/2'>
                 <img
-                    src={SignInQuotesImage}
+                    src="/assets/images/signin_quotes.png"
                     alt="Sign In Quotes"
                     className="object-cover pointer-events-none h-full w-full"
                 />

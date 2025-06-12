@@ -2,23 +2,21 @@ import React from 'react';
 import FeatureCard from './FeatureCard';
 
 // Import assets for FeatureCards
-import featureImg1 from '../../assets/images/frame_1171278319.png';
-import featureImg2 from '../../assets/images/frame_1171278319_1.png';
-import featureImg3 from '../../assets/images/frame_1171278318.png';
+
 
 const features = [
   {
-    imgSrc: featureImg1,
+    imgSrc: '/assets/images/frame_1171278319.png',
     title: "Personalisasi Berdasarkan Perasaanmu",
     description: "Tidak perlu bingung memilih kata. Cukup tulis apa yang kamu rasakan hari ini — kami akan bantu mengubahnya menjadi bermakna."
   },
   {
-    imgSrc: featureImg2,
+    imgSrc: '/assets/images/frame_1171278319_1.png',
     title: "Dikirim Otomatis ke Email Setiap Hari",
     description: "Satu quote penuh makna dikirim ke Emailmu, setiap hari. Kamu bisa menyesuaikan dengan perasaaanmu."
   },
   {
-    imgSrc: featureImg3,
+    imgSrc: '/assets/images/frame_1171278318.png',
     title: "Menerima Semua Rasa, dibuat dengan Empati",
     description: "Didorong oleh AI, namun dirancang untuk menyentuh sisi manusiawi — kami bantu temani lewat kalimat yang tulus."
   }

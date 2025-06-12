@@ -1,13 +1,13 @@
 import React from 'react';
 import Button from '../ui/Button';
-import CheckImage from '../../../assets/images/icon_check.png';
+
 import ModalBase from './Base';
 
 const ModalQuoteSent = () => {
     return (
         <ModalBase modal_id='modal_quote_sent'>
             <div className='flex flex-col justify-center items-center'>
-                <img src={CheckImage} alt="Icon Check" className='w-[6.25rem] h-[6.25rem] object-contain mb-8' />
+                <img src="/assets/images/icon_check.png" alt="Icon Check" className='w-[6.25rem] h-[6.25rem] object-contain mb-8' />
                 <h3 className='font-semibold text-2xl mb-2 text-black'><span className='italic'>Quote</span> Telah Dikirim 🚀</h3>
                 <div className='max-w-[24rem]'>
                     <p className='text-base text-brand-gray text-center mb-6'>
